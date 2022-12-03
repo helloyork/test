@@ -1,5 +1,4 @@
-<h1>没错你正在访问的网站由神奇海螺运行</h1>
-<p>Henry & Ronald & QwQ</p>
+
 
 <script>
 	import { spring } from 'svelte/motion';
@@ -23,3 +22,6 @@
 >
 	<circle fill="red" cx={$pos.x} cy={$pos.y} r={$size} />
 </svg>
+
+<h1>没错你正在访问的网站由神奇海螺运行</h1>
+<p>Henry & Ronald & QwQ</p>
