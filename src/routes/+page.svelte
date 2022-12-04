@@ -5,9 +5,6 @@
 	<!-- svelte-ignore a11y-missing-content -->
 	<h5 id="banner" />
 </dev>
-<title>Magic Conch!</title>
-
-
 
 <style type="text/css">
 	#banner {

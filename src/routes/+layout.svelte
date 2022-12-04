@@ -4,10 +4,10 @@
 
 <dev style="text-align:center;margin-top:0"
 	><ul id="header">
-		<li id="header-element"><a class="active" href="#home">Home</a></li>
-		<li id="header-element"><a href="#news">news</a></li>
-		<li id="header-element"><a href="#contact">Contact Us</a></li>
-		<li id="header-element"><a href="#about">About Us</a></li>
+		<li id="header-element"><a class="active" href="../">Home</a></li>
+		<li id="header-element"><a href='../test'>test</a></li>
+		<li id="header-element"><a href="../contact">Contact Us</a></li>
+		<li id="header-element"><a href="../about">About Us</a></li>
 	</ul></dev
 >
 <slot />
