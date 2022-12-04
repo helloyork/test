@@ -2,7 +2,7 @@
 	import '../app.scss';
 </script>
 
-<dev style="text-align:center;"
+<dev style="text-align:center;margin-top:0"
 	><ul id="header">
 		<li id="header-element"><a class="active" href="#home">Home</a></li>
 		<li id="header-element"><a href="#news">news</a></li>
@@ -15,13 +15,13 @@
 <style type="text/css">
 	#header {
 		list-style-type: none;
-		margin: 0;
+		/* margin: 0; */
 		padding: 0;
 		overflow: hidden;
 		background-color: rgba(255, 255, 255, 0);
 		width: 100vw;
 		float: center;
-		position: fixed;
+		position: relative;
 	}
 	#header-element {
 		display: inline-block;
