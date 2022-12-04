@@ -1,8 +1,9 @@
-import type { PageServerLoad } from './$types';
+import sqlite3 from 'sqlite3'
+import { open } from 'sqlite'
 
-export const load: PageServerLoad = () => {
-    const r='hello';
-	return {
-		message: r+' world',
-	};
-};
+open({
+	filename: '/tmp/database.db',
+	driver: sqlite3.Database
+}).then((db) => {
+	// do your thing
+})
