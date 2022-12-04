@@ -6,15 +6,16 @@
 </ul></dev>
 <slot />
 
-<style>
+<style type="text/css">
 	#header {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: #333;
+		background-color: rgba(255, 255, 255, 0);
         width: 100vw;
         float: center;
+        position: fixed;
 	}
 	#header-element {
         display:inline-block;
@@ -25,11 +26,15 @@
 		text-align: center;
 		padding: 14px 20px;
 		text-decoration: none;
+        font-weight: 100;
 	}
 	#header-element a:hover:not(.active) {
-		background-color: #111;
+		background-color: #1fc7a5;
+	}
+    #header-element .active:hover {
+		background-color: #1ca68b;
 	}
 	.active {
-		background-color: #4caf50;
+		background-color: #14ab8d;
 	}
 </style>
