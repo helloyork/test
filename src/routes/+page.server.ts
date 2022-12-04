@@ -1,10 +1,17 @@
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
-import type { PageServerLoad } from './$types';
-export const db = async () => await open({
-	filename: '../../../test.db',
-	driver: sqlite3
-});
-export const sql = async function (arr: Array<String>, ...params: any[]) {
-	(await db()).run(arr.join('?'), params);
+export class db {
+	#db: any;
+	constructor() {
+		let init = (async () => {
+			this.#db = (await open({
+				filename: '../../../test.db',
+				driver: sqlite3
+			})).run
+		})();
+		return {...this,init};
+	}
+	async sql(arr: Array<String>, ...params: any[])  {
+		this.#db.run(arr.join('?'), params);
+	}
 }

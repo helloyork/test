@@ -1,13 +1,19 @@
+
 <title>awa</title>
 
-<script type="ts">
+<script>
+	let m = { x: 0, y: 0 };
 
+	function handleMousemove(event) {
+		m.x = event.clientX;
+		m.y = event.clientY;
+	}
 </script>
 
+<style>
+	div { width: 100vw; height: 100vh; }
+</style>
 
-
-<h1>没错你正在访问的网站由神奇海螺运行</h1>
-
-<h6>Hello World</h6>
-
-
+<div on:mousemove={handleMousemove}>
+	The mouse position is {m.x} x {m.y}
+</div>
