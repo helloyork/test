@@ -1,9 +1,10 @@
 <script>
 </script>
 
-<!-- <dev>
+<dev>
+	<!-- svelte-ignore a11y-missing-content -->
 	<h5 id="banner" />
-</dev> -->
+</dev>
 <title>Magic Conch!</title>
 
 

@@ -21,7 +21,7 @@
 		background-color: rgba(255, 255, 255, 0);
 		width: 100vw;
 		float: center;
-		position: relative;
+		position: fixed;
 	}
 	#header-element {
 		display: inline-block;
