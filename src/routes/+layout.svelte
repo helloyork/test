@@ -1,40 +1,34 @@
-<script>
+<script lang="ts">
 	//你有没有注意到一个神奇的语法错误？?
+	import { INavItem } from '$lib/Nav/type';
 	import '@mdi/font/css/materialdesignicons.min.css';
 	import 'fluent-svelte/theme.css';
 	import '../app.css';
-	const navItems = [
+	import Nav from '../lib/Nav/Nav.svelte';
+	const navItems: INavItem = [
 		{ label: '关于我们', href: '/about' },
 		{ label: '联系我们', href: '/contact' },
 		{ label: 'Test', href: '/test' },
-		{ label: '资源', href: '/storage', submenu: [{ label: '', href: '' }] },
+		{
+			label: '资源',
+			href: '/storage',
+			children: [
+				{ label: '下北泽刊阅', href: '#114514' },
+				{ label: 'te', href: '' },
+				{ label: 'te', href: '' },
+				{ label: 'te', href: '' },
+				{ label: 'te', href: '' },
+				{ label: 'te', href: '' },
+				{ label: 'te', href: '' },
+				{ label: 'te', href: '' }
+			]
+		},
 		{ label: 'Test', href: '/test' }
 	];
-	let y = 0;
-	$: if (y >= 300) alert('hiya!');
 </script>
 
-<svelte:window bind:scrollY={y} />
 <div class="flex flex-col h-full">
-	<div
-		id="header-div"
-		class="h-12 bg-cyan-500 text-white flex justify-center flex-col space-x-4 px-5"
-		style="height: 60px;"
-	>
-		<div class="h-8 flex flex-row  items-center">
-			<span class="font-bold flex " style="margin-right: 20px;">
-				<a href="../" style="padding:13px 25px;">Nomen 小队</a>
-			</span>
-			{#each navItems as item}
-				<a
-					href={item.href}
-					class="no-underline text-opacity-50 hover:text-opacity-80 transition p-2"
-					id="header-element"
-					style="padding:13px 25px;">{item.label}</a
-				>
-			{/each}
-		</div>
-	</div>
+	<Nav {navItems} />
 	<div class="flex flex-auto ">
 		<div class="container m-auto h-full">
 			<slot />
