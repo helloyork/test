@@ -13,7 +13,7 @@
 			label: '资源',
 			href: '/storage',
 			children: [
-				{ label: '下北泽刊阅', href: '#114514' },
+				{ label: '下北泽刊阅', href: 'https://1919810.com' },
 				{ label: 'te', href: '' },
 				{ label: 'te', href: '' },
 				{ label: 'te', href: '' },
@@ -36,33 +36,3 @@
 	</div>
 </div>
 
-<style>
-	#header-element:hover {
-		color: rgb(180, 255, 241);
-		background-color: rgb(33, 222, 191);
-	}
-	#header-element {
-		display: inline-block;
-	}
-	#header-element a {
-		display: block;
-		color: white;
-		text-align: center;
-		padding: 18px 25px;
-		text-decoration: none;
-		font-weight: 100;
-	}
-	#header-element a:hover:not(.active) {
-		background-color: #ffffff0e;
-	}
-	.active {
-		background-color: rgba(0, 0, 0, 0.136);
-	}
-	.active:hover {
-		background-color: rgba(0, 0, 0, 0.053);
-	}
-	.header-element-last {
-		float: right;
-		background-color: #ffffff45;
-	}
-</style>
