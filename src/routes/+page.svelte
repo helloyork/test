@@ -1,4 +1,5 @@
 <script>
+	import 'fluent-svelte/theme.css';
 </script>
 
 <dev>
@@ -12,7 +13,6 @@
 		padding: 300px;
 		text-align: center;
 		background: #1abc9c;
-		/* color: white; */
 		font-size: 30px;
 	}
 </style>

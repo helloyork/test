@@ -1,17 +1,19 @@
-import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
+import sqlite3 from 'sqlite3';
 export class db {
 	#db: any;
 	constructor() {
-		let init = (async () => {
-			this.#db = (await open({
-				filename: '../../../test.db',
-				driver: sqlite3
-			})).run
+		const init = (async () => {
+			this.#db = (
+				await open({
+					filename: '../../../test.db',
+					driver: sqlite3
+				})
+			).run;
 		})();
-		return {...this,init};
+		return { ...this, init };
 	}
-	async sql(arr: Array<String>, ...params: any[])  {
+	async sql(arr: Array<string>, ...params: any[]) {
 		this.#db.run(arr.join('?'), params);
 	}
 }

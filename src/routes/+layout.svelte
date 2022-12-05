@@ -1,21 +1,21 @@
 <script>
-	import '../app.scss';
+	import 'fluent-svelte/theme.css';
 </script>
 
-<dev style="text-align:center;margin-top:0"
-	><ul id="header">
+
+	<ul id="header" style="float: center;margin-top:0;">
 		<li id="header-element"><a class="active" href="../">Home</a></li>
 		<li id="header-element"><a href='../test'>test</a></li>
 		<li id="header-element"><a href="../contact">Contact Us</a></li>
 		<li id="header-element"><a href="../about">About Us</a></li>
-	</ul></dev
->
+		<li id="header-element" class="header-element-last"><a href="../about">About Us</a></li>
+	</ul>
+
 <slot />
 
 <style type="text/css">
 	#header {
 		list-style-type: none;
-		/* margin: 0; */
 		padding: 0;
 		overflow: hidden;
 		background-color: rgba(255, 255, 255, 0);
@@ -42,5 +42,9 @@
 	}
 	.active:hover {
 		background-color: rgba(0, 0, 0, 0.053);
+	}
+	.header-element-last{
+		float: right;
+		background-color: #ffffff45;
 	}
 </style>
