@@ -1,11 +1,10 @@
 <script>
 	import 'fluent-svelte/theme.css';
-	import '@mdi/font/css/materialdesignicons.min.css'
 </script>
 
 <dev>
 	<!-- svelte-ignore a11y-missing-content -->
-	<h5 id="banner" />
+	<!-- <h5 id="banner" /> -->
 </dev>
 
 <style type="text/css">
