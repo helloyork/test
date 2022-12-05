@@ -5,7 +5,7 @@
 	const navItems = [
 		{ label: '关于我们', href: '/about' },
 		{ label: '联系我们', href: '/contact' },
-		{ label: 'Test', href: '/test' },
+		{ label: '资源', href: '/storage', secHeader:[{label:'',href:''}] },
 		{ label: 'Test', href: '/test' }
 	];
 	let y = 0;
@@ -21,14 +21,14 @@
 	>
 		<div class="h-8 flex flex-row  items-center">
 			<span class="font-bold flex " style="margin-right: 20px;">
-				<a href="../" style="margin: 5px;padding:13px 25px;">Nomen 小队</a>
+				<a href="../" style="padding:13px 25px;">Nomen 小队</a>
 			</span>
 			{#each navItems as item}
 				<a
 					href={item.href}
 					class="no-underline text-opacity-50 hover:text-opacity-80 transition p-2"
 					id="header-element"
-					style="margin: 5px;padding:13px 25px;">{item.label}</a
+					style="padding:13px 25px;">{item.label}</a
 				>
 			{/each}
 		</div>
@@ -44,6 +44,9 @@
 	#header-element:hover {
 		color: rgb(180, 255, 241);
 		background-color: rgb(33, 222, 191);
+	}
+	#header-element{
+		font-weight: 300;
 	}
 	#header-div {
 		background-color: rgba(34, 238, 204);
