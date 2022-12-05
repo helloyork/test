@@ -1,5 +1,6 @@
 <script>
 	import 'fluent-svelte/theme.css';
+	import '@mdi/font/css/materialdesignicons.min.css'
 </script>
 
 <dev>
