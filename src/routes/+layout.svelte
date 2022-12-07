@@ -2,18 +2,20 @@
 	import '@mdi/font/css/materialdesignicons.min.css';
 	import 'fluent-svelte/theme.css';
 	import '../app.css';
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-	import { each } from 'svelte/internal';
-	$:page;
-	function getPage(href) {
-		console.log(href)
-		return $page.url.pathname == href;
-	}
-	onMount(() => {});
+	import NavLink from '../lib/Nav/NavLink.svelte';
+	const links = [
+		{ label: '主页', target: '/' },
+		{ label: '关于我们', target: '/about' },
+		{ label: '项目与资源', target: '/storage' },
+		{ label: '测试', target: '/test' }
+		// {label:"主页",target:"/"},
+		// {label:"主页",target:"/"},
+		// {label:"主页",target:"/"},
+		// {label:"主页",target:"/"},
+		// {label:"主页",target:"/"},
+	];
 </script>
 
-<p>Current URL: {$page.url.pathname}</p>
 <nav class="bg-gray-800">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-16 items-center justify-between">
@@ -60,34 +62,9 @@
 				</div>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
-						<a
-							href="/"
-							class={getPage('/')
-								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
-							aria-current="page">主页</a
-						>
-						<a
-							href="/about"
-							class={getPage('/about')
-								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
-							>关于我们</a
-						>
-						<a
-							href="/storage"
-							class={getPage('/storage')
-								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
-							>项目与资源</a
-						>
-						<a
-							href="/test"
-							class={getPage('/test')
-								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
-							>测试</a
-						>
+						{#each links as item}
+							<NavLink {...item} />
+						{/each}
 					</div>
 				</div>
 			</div>

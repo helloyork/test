@@ -38,6 +38,7 @@
 		{navItem.label}
 	</a>
 {/if}
+
 <style>
 	#header-element:hover {
 		color: rgb(180, 255, 241);
