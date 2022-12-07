@@ -3,11 +3,16 @@
 	import 'fluent-svelte/theme.css';
 	import '../app.css';
 	import { onMount } from 'svelte';
-	onMount(()=>{
-
-	})
+	import { page } from '$app/stores';
+	$:page;
+	function getPage(href) {
+		console.log(href)
+		return $page.url.pathname == href;
+	}
+	onMount(() => {});
 </script>
 
+<p>Current URL: {$page.url.pathname}</p>
 <nav class="bg-gray-800">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-16 items-center justify-between">
@@ -56,22 +61,30 @@
 					<div class="flex space-x-4">
 						<a
 							href="/"
-							class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+							class={getPage('/')
+								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
 							aria-current="page">主页</a
 						>
 						<a
 							href="/about"
-							class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+							class={getPage('/about')
+								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
 							>关于我们</a
 						>
 						<a
 							href="/storage"
-							class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+							class={getPage('/storage')
+								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
 							>项目与资源</a
 						>
 						<a
 							href="/test"
-							class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+							class={getPage('/test')
+								? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+								: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
 							>测试</a
 						>
 					</div>
@@ -267,7 +280,5 @@
 		>
 	</div>
 </div>
-
-
 
 <slot />
