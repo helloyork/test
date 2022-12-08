@@ -93,7 +93,7 @@
 				<div class="flex flex-shrink-0 items-center">
 					<img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" />
 					<a
-						class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300"
+						class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300 no-underline"
 						style="margin-right: 20px;margin-left: 10px;"
 						href="/"
 						alt="Nomen 小队">Nomen 小队</a
