@@ -2,9 +2,9 @@
 	import '@mdi/font/css/materialdesignicons.min.css';
 	import 'fluent-svelte/theme.css';
 	import '../app.css';
-	import  NavLink  from '../lib/Nav/NavLink.svelte';
-	import  UserNav  from '../lib/UserNav/UserNav.svelte';
-	import  {content}  from 'svelte/store';
+	import NavLink from '../lib/Nav/NavLink.svelte';
+	import UserNav from '../lib/UserNav/UserNav.svelte';
+	import { content } from 'svelte/store';
 	// $:content='awa!';
 	const links = [
 		{ label: '主页', target: '/' },
@@ -18,9 +18,9 @@
 	$: UserNavs = [
 		login
 			? {
-					href: '/user/about',
+					href: '/user/me',
 					text: '我',
-					id: 'about/me'
+					id: 'me'
 			  }
 			: {},
 		{
@@ -30,16 +30,24 @@
 			clickHandler: (info) => {
 				if (info.text == '登出') {
 					alert('awa');
+					//等储存做好了再来改
 				}
 			}
 		}
 	];
-	
+	import Toasts from '../lib/Toast/Toasts.svelte';
+	import { addToast } from '../lib/Toast/store.js';
+
+	let message = 'Hello, World!';
+	let types = ['success', 'error', 'info'];
+	let type = 'info';
+	let dismissible = false;
+	let timeout = 100;
+	// addToast({ message, type, dismissible, timeout })
 </script>
 
-<p>{$content}</p>
+<Toasts />
 
-<input bind:value={$content} />
 
 <nav class="bg-gray-800">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -196,3 +204,15 @@
 </nav>
 
 <slot />
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	form {
+		border: 0 none;
+		margin-top: 15rem;
+		text-align: center;
+	}
+</style>
