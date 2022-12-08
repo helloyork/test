@@ -1,10 +1,11 @@
 <script>
 	import '@mdi/font/css/materialdesignicons.min.css';
 	import 'fluent-svelte/theme.css';
-	import { text } from 'svelte/internal';
 	import '../app.css';
-	import NavLink from '../lib/Nav/NavLink.svelte';
-	import UserNav from '../lib/UserNav/UserNav.svelte';
+	import  NavLink  from '../lib/Nav/NavLink.svelte';
+	import  UserNav  from '../lib/UserNav/UserNav.svelte';
+	import  {content}  from 'svelte/store';
+	// $:content='awa!';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -12,24 +13,33 @@
 		{ label: '测试', target: '/test' }
 	];
 	let userOpen = false;
-	let login = false;
+
+	$: login = false;
 	$: UserNavs = [
-		login ? {
-			href: '/user/about',
-			text: '我',
-			id: 'about/me'
-		} : {},
+		login
+			? {
+					href: '/user/about',
+					text: '我',
+					id: 'about/me'
+			  }
+			: {},
 		{
-			href: '/',
+			href: login ? '/' : '/user/login',
 			text: login ? '登出' : '登录',
+			id: 'login/logout',
 			clickHandler: (info) => {
-				alert(info.text == '登出' ? '你登出啦（敷衍' : '你登录啦（敷衍');
-				login = !login;
-			},
-			id: 'login/logout'
+				if (info.text == '登出') {
+					alert('awa');
+				}
+			}
 		}
 	];
+	
 </script>
+
+<p>{$content}</p>
+
+<input bind:value={$content} />
 
 <nav class="bg-gray-800">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
