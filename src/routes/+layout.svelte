@@ -54,7 +54,8 @@
 			</div>
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 				<div class="flex flex-shrink-0 items-center">
-					<img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" />
+					<!-- <img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" /> -->
+					<a class="m-2 text-zinc-300" href="/" alt="Nomen 小队">Nomen 小队</a>
 				</div>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
@@ -140,24 +141,25 @@
 						tabindex="-1"
 					>
 						<a
-							href="/"
+							href="/user/about"
 							class="block px-4 py-2 text-sm text-gray-700"
 							role="menuitem"
 							tabindex="-1"
 							id="user-menu-item-0">我</a
 						>
 						<a
-							href="/"
+							href="/user/settings"
 							class="block px-4 py-2 text-sm text-gray-700"
 							role="menuitem"
 							tabindex="-1"
 							id="user-menu-item-1">设置</a
 						>
 						<a
-							href="/"
 							class="block px-4 py-2 text-sm text-gray-700"
 							role="menuitem"
 							tabindex="-1"
+							href="/"
+							on:click={()=>alert('你登出啦（敷衍')}
 							id="user-menu-item-2">登出</a
 						>
 					</div>
