@@ -3,6 +3,9 @@
 	import 'fluent-svelte/theme.css';
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
+	import UserNav from '../lib/UserNav/UserNav.svelte';
+	import { content } from 'svelte/store';
+	// $:content='awa!';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -10,7 +13,41 @@
 		{ label: '测试', target: '/test' }
 	];
 	let userOpen = false;
+
+	$: login = false;
+	$: UserNavs = [
+		login
+			? {
+					href: '/user/me',
+					text: '我',
+					id: 'me'
+			  }
+			: {},
+		{
+			href: login ? '/' : '/user/login',
+			text: login ? '登出' : '登录',
+			id: 'login/logout',
+			clickHandler: (info) => {
+				if (info.text == '登出') {
+					alert('awa');
+					//等储存做好了再来改
+				}
+			}
+		}
+	];
+	import Toasts from '../lib/Toast/Toasts.svelte';
+	import { addToast } from '../lib/Toast/store.js';
+
+	let message = 'Hello, World!';
+	let types = ['success', 'error', 'info'];
+	let type = 'info';
+	let dismissible = false;
+	let timeout = 100;
+	// addToast({ message, type, dismissible, timeout })
 </script>
+
+<Toasts />
+
 
 <nav class="bg-gray-800">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -54,8 +91,13 @@
 			</div>
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 				<div class="flex flex-shrink-0 items-center">
-					<!-- <img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" /> -->
-					<a class="m-2 text-zinc-300" href="/" alt="Nomen 小队">Nomen 小队</a>
+					<img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" />
+					<a
+						class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300"
+						style="margin-right: 20px;margin-left: 10px;"
+						href="/"
+						alt="Nomen 小队">Nomen 小队</a
+					>
 				</div>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
@@ -90,7 +132,7 @@
 						/>
 					</svg>
 				</button>
-				<div class="relative ml-3">
+				<div class="relative ml-3 m-3">
 					<div>
 						<button
 							type="button"
@@ -140,28 +182,11 @@
 						aria-labelledby="user-menu-button"
 						tabindex="-1"
 					>
-						<a
-							href="/user/about"
-							class="block px-4 py-2 text-sm text-gray-700"
-							role="menuitem"
-							tabindex="-1"
-							id="user-menu-item-0">我</a
-						>
-						<a
-							href="/user/settings"
-							class="block px-4 py-2 text-sm text-gray-700"
-							role="menuitem"
-							tabindex="-1"
-							id="user-menu-item-1">设置</a
-						>
-						<a
-							class="block px-4 py-2 text-sm text-gray-700"
-							role="menuitem"
-							tabindex="-1"
-							href="/"
-							on:click={()=>alert('你登出啦（敷衍')}
-							id="user-menu-item-2">登出</a
-						>
+						{#each UserNavs as un}
+							{#if un.id !== undefined}
+								<UserNav {...un} />
+							{/if}
+						{/each}
 					</div>
 				</div>
 			</div>
@@ -179,3 +204,15 @@
 </nav>
 
 <slot />
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	form {
+		border: 0 none;
+		margin-top: 15rem;
+		text-align: center;
+	}
+</style>
