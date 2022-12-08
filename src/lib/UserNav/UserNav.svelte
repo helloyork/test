@@ -6,7 +6,7 @@
 </script>
 
 <a {href} class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" {id}
-	on:click={clickHandler}>{text}
+	on:click={()=>clickHandler({href,text,id})}>{text}
 </a>
 
 <!-- <a

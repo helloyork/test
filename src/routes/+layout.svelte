@@ -1,6 +1,7 @@
 <script>
 	import '@mdi/font/css/materialdesignicons.min.css';
 	import 'fluent-svelte/theme.css';
+	import { text } from 'svelte/internal';
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
@@ -12,14 +13,20 @@
 	];
 	let userOpen = false;
 	let login = false;
-	const UserNavs = [
+	$: UserNavs = [
+		login ? {
+			href: '/user/about',
+			text: '我',
+			id: 'about/me'
+		} : {},
 		{
 			href: '/',
-			text: '回到主页',
-			clickHandler: () => {
-				alert('你登出啦（敷衍');
+			text: login ? '登出' : '登录',
+			clickHandler: (info) => {
+				alert(info.text == '登出' ? '你登出啦（敷衍' : '你登录啦（敷衍');
+				login = !login;
 			},
-			id: 'awa'
+			id: 'login/logout'
 		}
 	];
 </script>
@@ -158,7 +165,9 @@
 						tabindex="-1"
 					>
 						{#each UserNavs as un}
-							<UserNav {...un}/>
+							{#if un.id !== undefined}
+								<UserNav {...un} />
+							{/if}
 						{/each}
 					</div>
 				</div>
