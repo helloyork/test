@@ -2,12 +2,17 @@
 	import { page } from '$app/stores';
 	export let target = '/';
 	export let label = '主页';
+	export let type = 'desktop';
 </script>
 
 <a
 	href={target}
 	class={$page.url.pathname === target
-		? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
-		: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'}
+		? type == 'desktop'
+			? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+			: 'bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
+		: type == 'desktop'
+		? 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+		: 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'}
 	aria-current="page">{label}</a
 >

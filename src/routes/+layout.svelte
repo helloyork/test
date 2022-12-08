@@ -8,12 +8,8 @@
 		{ label: '关于我们', target: '/about' },
 		{ label: '项目与资源', target: '/storage' },
 		{ label: '测试', target: '/test' }
-		// {label:"主页",target:"/"},
-		// {label:"主页",target:"/"},
-		// {label:"主页",target:"/"},
-		// {label:"主页",target:"/"},
-		// {label:"主页",target:"/"},
 	];
+	let userOpen = false;
 </script>
 
 <nav class="bg-gray-800">
@@ -101,6 +97,7 @@
 							id="user-menu-button"
 							aria-expanded="false"
 							aria-haspopup="true"
+							on:click={() => (userOpen = !userOpen)}
 						>
 							<span class="sr-only">Open user menu</span>
 							<svg
@@ -134,7 +131,9 @@
 						</button>
 					</div>
 					<div
-						class="hidden right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+						class="{userOpen
+							? 'block'
+							: 'hidden'} right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none fixed m-2"
 						role="menu"
 						aria-orientation="vertical"
 						aria-labelledby="user-menu-button"
@@ -170,93 +169,11 @@
 	<!-- Mobile menu, show/hide based on menu state. -->
 	<div class="sm:hidden" id="mobile-menu">
 		<div class="space-y-1 px-2 pt-2 pb-3">
-			<a
-				href="/"
-				class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-				aria-current="page">主页</a
-			>
-			<a
-				href="/about"
-				class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-				>关于我们</a
-			>
-			<a
-				href="/storage"
-				class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-				>项目与资源</a
-			>
-			<a
-				href="/test"
-				class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-				>测试</a
-			>
+			{#each links as item}
+				<NavLink {...item} type="mobile" />
+			{/each}
 		</div>
 	</div>
 </nav>
-
-<button
-	id="dropdownInformationButton"
-	data-dropdown-toggle="dropdownInformation"
-	class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-	type="button"
-	>Dropdown header <svg
-		class="ml-2 w-4 h-4"
-		aria-hidden="true"
-		fill="none"
-		stroke="currentColor"
-		viewBox="0 0 24 24"
-		xmlns="http://www.w3.org/2000/svg"
-		><path
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="2"
-			d="M19 9l-7 7-7-7"
-		/></svg
-	></button
->
-
-<!-- Dropdown menu -->
-<div
-	id="dropdownInformation"
-	class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
->
-	<div class="py-3 px-4 text-sm text-gray-900 dark:text-white">
-		<div>Bonnie Green</div>
-		<div class="font-medium truncate">name@flowbite.com</div>
-	</div>
-	<ul
-		class="py-1 text-sm text-gray-700 dark:text-gray-200"
-		aria-labelledby="dropdownInformationButton"
-	>
-		<li>
-			<a
-				href="#"
-				class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-				>Dashboard</a
-			>
-		</li>
-		<li>
-			<a
-				href="#"
-				class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-				>Settings</a
-			>
-		</li>
-		<li>
-			<a
-				href="#"
-				class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-				>Earnings</a
-			>
-		</li>
-	</ul>
-	<div class="py-1">
-		<a
-			href="#"
-			class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-			>Sign out</a
-		>
-	</div>
-</div>
 
 <slot />
