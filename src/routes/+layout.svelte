@@ -3,6 +3,7 @@
 	import 'fluent-svelte/theme.css';
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
+	import UserNav from '../lib/UserNav/UserNav.svelte';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -10,6 +11,17 @@
 		{ label: '测试', target: '/test' }
 	];
 	let userOpen = false;
+	let login = false;
+	const UserNavs = [
+		{
+			href: '/',
+			text: '回到主页',
+			clickHandler: () => {
+				alert('你登出啦（敷衍');
+			},
+			id: 'awa'
+		}
+	];
 </script>
 
 <nav class="bg-gray-800">
@@ -145,28 +157,9 @@
 						aria-labelledby="user-menu-button"
 						tabindex="-1"
 					>
-						<a
-							href="/user/about"
-							class="block px-4 py-2 text-sm text-gray-700"
-							role="menuitem"
-							tabindex="-1"
-							id="user-menu-item-0">我</a
-						>
-						<a
-							href="/user/settings"
-							class="block px-4 py-2 text-sm text-gray-700"
-							role="menuitem"
-							tabindex="-1"
-							id="user-menu-item-1">设置</a
-						>
-						<a
-							class="block px-4 py-2 text-sm text-gray-700"
-							role="menuitem"
-							tabindex="-1"
-							href="/"
-							on:click={() => alert('你登出啦（敷衍')}
-							id="user-menu-item-2">登出</a
-						>
+						{#each UserNavs as un}
+							<UserNav {...un}/>
+						{/each}
 					</div>
 				</div>
 			</div>
