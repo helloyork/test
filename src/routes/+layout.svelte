@@ -54,8 +54,13 @@
 			</div>
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 				<div class="flex flex-shrink-0 items-center">
-					<!-- <img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" /> -->
-					<a class="m-2 text-zinc-300" href="/" alt="Nomen 小队">Nomen 小队</a>
+					<img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" />
+					<a
+						class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300"
+						style="margin-right: 20px;margin-left: 10px;"
+						href="/"
+						alt="Nomen 小队">Nomen 小队</a
+					>
 				</div>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
@@ -90,7 +95,7 @@
 						/>
 					</svg>
 				</button>
-				<div class="relative ml-3">
+				<div class="relative ml-3 m-3">
 					<div>
 						<button
 							type="button"
@@ -159,7 +164,7 @@
 							role="menuitem"
 							tabindex="-1"
 							href="/"
-							on:click={()=>alert('你登出啦（敷衍')}
+							on:click={() => alert('你登出啦（敷衍')}
 							id="user-menu-item-2">登出</a
 						>
 					</div>
