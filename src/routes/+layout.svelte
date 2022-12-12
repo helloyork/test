@@ -4,8 +4,6 @@
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
-	import { content } from 'svelte/store';
-	// $:content='awa!';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -29,8 +27,9 @@
 			id: 'login/logout',
 			clickHandler: (info) => {
 				if (info.text == '登出') {
-					alert('awa');
-					//等储存做好了再来改
+					alert('你登出啦（敷衍');
+				} if (info.text == '登录') {
+					alert('你登录啦（敷衍');
 				}
 			}
 		}
