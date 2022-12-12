@@ -35,18 +35,8 @@
 			}
 		}
 	];
-	import Toasts from '../lib/Toast/Toasts.svelte';
-	import { addToast } from '../lib/Toast/store.js';
-
-	let message = 'Hello, World!';
-	let types = ['success', 'error', 'info'];
-	let type = 'info';
-	let dismissible = false;
-	let timeout = 100;
-	// addToast({ message, type, dismissible, timeout })
 </script>
 
-<Toasts />
 
 
 <nav class="bg-gray-800">
@@ -205,14 +195,3 @@
 
 <slot />
 
-<style>
-	:global(*) {
-		box-sizing: border-box;
-	}
-
-	form {
-		border: 0 none;
-		margin-top: 15rem;
-		text-align: center;
-	}
-</style>
