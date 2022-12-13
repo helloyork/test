@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import { useForm, validators, HintGroup, Hint, email, required } from 'svelte-use-form';
 
 	const form = useForm();
@@ -27,4 +27,9 @@
 		border-color: red;
 		outline-color: red;
 	}
-</style>
+</style> -->
+<script>
+	import {dbtest} from '../../../lib/database/db.ts';
+</script>
+
+<!-- <h6>{JSON.stringify(dbtest())}</h6> -->
