@@ -4,8 +4,6 @@
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
-	import { content } from 'svelte/store';
-	// $:content='awa!';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -29,24 +27,15 @@
 			id: 'login/logout',
 			clickHandler: (info) => {
 				if (info.text == '登出') {
-					alert('awa');
-					//等储存做好了再来改
+					alert('你登出啦（敷衍');
+				} if (info.text == '登录') {
+					alert('你登录啦（敷衍');
 				}
 			}
 		}
 	];
-	import Toasts from '../lib/Toast/Toasts.svelte';
-	import { addToast } from '../lib/Toast/store.js';
-
-	let message = 'Hello, World!';
-	let types = ['success', 'error', 'info'];
-	let type = 'info';
-	let dismissible = false;
-	let timeout = 100;
-	// addToast({ message, type, dismissible, timeout })
 </script>
 
-<Toasts />
 
 
 <nav class="bg-gray-800">
@@ -205,14 +194,3 @@
 
 <slot />
 
-<style>
-	:global(*) {
-		box-sizing: border-box;
-	}
-
-	form {
-		border: 0 none;
-		margin-top: 15rem;
-		text-align: center;
-	}
-</style>
