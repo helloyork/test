@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "构建项目: yarn dev",
+            "request": "launch",
+            "command": "yarn build",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "运行脚本: yarn dev",
+            "request": "launch",
+            "command": "yarn dev",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "node-terminal",
+            "name": "运行脚本: yarn dev -- --open",
+            "request": "launch",
+            "command": "yarn dev -- --open",
+            "cwd": "${workspaceFolder}"
+        },
+    ]
+}

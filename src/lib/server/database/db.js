@@ -1,8 +1,7 @@
 
-import sqlite3 from 'sqlite3';
-import sqlite from 'sqlite';
-let db = new sqlite3.Database('./user.db');
-export function dbtest() {
+// import sqlite3 from 'sqlite3';
+// let db = new sqlite3.Database('./user.db');
+export async function dbtest() {
     let result;
     let sql = `SELECT * FROM test`;
     db.all(sql, [], (err, rows) => {
@@ -14,5 +13,6 @@ export function dbtest() {
         });
     });
     return result;
+    // return 'hi!';
 }
 
