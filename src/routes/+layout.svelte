@@ -22,14 +22,12 @@
 			  }
 			: {},
 		{
-			href: login ? '/' : '/user/login',
+			href: login ? '/' : '/login',
 			text: login ? '登出' : '登录',
 			id: 'login/logout',
 			clickHandler: (info) => {
 				if (info.text == '登出') {
 					alert('你登出啦（敷衍');
-				} if (info.text == '登录') {
-					alert('你登录啦（敷衍');
 				}
 			}
 		}

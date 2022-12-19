@@ -1,17 +1,28 @@
 
 import sqlite3 from 'sqlite3';
 let db = new sqlite3.Database('src\\lib\\server\\database\\user.db');
-export async function dbtest() {
-    let result = await gDbtest();
-    console.log(result);
-    return result;
+/*
+user (
+    userkey TEXT PRIMARY Key NOT NULL,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT,
+    value TEXT
+); 
+*/
+
+export async function login(name) {
+    return sql`SELECT * FROM user WHERE username = ${name}`;
 }
-function gDbtest() {
+
+async function sql(cmd, ...params) {
     return new Promise((resolve, reject) => {
-        let sql = `SELECT * FROM test2`;
-        db.all(sql, [], (err, row) => {
-            if (err) throw new Error(err);
-            resolve(row);
-        });
+        if (typeof cmd != 'object' || !cmd.length) throw new Error('use the tag function to call sql');
+        db[(cmd[0] && (cmd[0].includes('SELECT') || cmd[0].includes('select'))) ? 'all' : 'run']
+            (cmd.join('?'), params, (err, rows) => {
+                resolve({ ok: err?false:true, result: err ? err : rows });
+            })
     })
 }
+
+
+
