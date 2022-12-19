@@ -1,6 +1,6 @@
 
 import sqlite3 from 'sqlite3';
-let db = new sqlite3.Database('./user.db');
+let db = new sqlite3.Database('src\\lib\\server\\database\\user.db');
 export async function dbtest() {
     let result = await gDbtest();
     console.log(result);

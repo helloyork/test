@@ -1,4 +1,6 @@
+import { redirect } from '@sveltejs/kit';
 import { dbtest } from '../../../../lib/server/database/db';
+
 /** @type {import('./$types').RequestHandler} */
 export async function POST({request}){
     // let message = await request.json();
@@ -6,3 +8,8 @@ export async function POST({request}){
     // console.log(message);
     return new Response(JSON.stringify(message), { status: 200 })
 }
+
+export async function GET({request}){
+    throw redirect(307, '/');
+}
+
