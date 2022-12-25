@@ -27,6 +27,17 @@ export function login(username, password) {
     })
 }
 
+export function register(username, nickname,password){
+    return new Promise((resolve,reject) => {
+        fetch('/api/user/register', {
+            method: 'POST',
+            body: JSON.stringify({ username, nickname,password })
+        })
+            .then((result) => result.json())
+            .then(resolve);
+    })
+}
+
 export function logout() {
     return;
 }

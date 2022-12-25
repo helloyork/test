@@ -5,7 +5,7 @@
 
 import { redirect } from '@sveltejs/kit';
 import { login } from '../../../../lib/server/database/db';
-import md5 from 'md5'
+import md5 from 'md5';
 
 /** 
  * @type {import('./$types').RequestHandler}
@@ -28,7 +28,13 @@ export async function POST({ request }) {
     ), { status: 401 })
     return new Response(JSON.stringify({
         pass: true, code: 0, message: '验证成功',
-        result: { userkey: user.result[0].userkey, username: user.result[0].username, password: value.password, value: user.result[0].value }
+        result: {
+            userkey: user.result[0].userkey,
+            username: user.result[0].username,
+            password: value.password,
+            nickname: user.result[0].nickname,
+            value: JSON.stringify(user.result[0].value)
+        }
     }), { status: 200 })
 }
 

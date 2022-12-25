@@ -34,10 +34,8 @@
 			if (r) {
 				localStorage.setItem('user', JSON.stringify(r.result));
 				console.log('login sc');
-				console.log(localStorage);
 				loginstate = true;
 			} else {
-				console.log(localStorage);
 				console.log('login fs');
 			}
 		});
@@ -143,12 +141,14 @@
 							on:click={() => (userOpen = !userOpen)}
 						>
 							<span class="sr-only">Open user menu</span>
+							<h6 class='{loginstate?'hidden':'block'} text-white m-1.5'>未登录</h6>
 							<svg
 								width="27"
 								height="27"
 								viewBox="0 0 48 48"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
+								class='{loginstate?'block':'hidden'}'
 								><path
 									fill-rule="evenodd"
 									clip-rule="evenodd"
