@@ -1,12 +1,13 @@
 <script>
-	import Tip from './tip.svelte';
-	import { login} from '$lib/user.js';
+	import Tip from '../tip.svelte';
+	import { register } from '$lib/user.js';
 	import { onMount } from 'svelte';
+	import { locallogin } from '../../../lib/user';
 	let username,
-		password = '';
+		password,
+        nickname = '';
 	$: dis = false;
-	$: tips1 = false;
-	$: tips2 = false;
+	let tips1,tips2,tips3 = false;
 
 	$: errshow = false;
 	$: errtext = '';
@@ -23,8 +24,12 @@
 			tips2 = true;
 			return;
 		}
+        if (nickname.length <= 0) {
+			tips3 = true;
+			return;
+		}
 		dis = true;
-		let result = await login(username, password);
+		let result = await register(username, nickname,password);
 		if (result.pass) {
 			localStorage.setItem('user',JSON.stringify(result.result));
 			location.href = '/user/me';
@@ -34,12 +39,7 @@
 			dis = false;
 		}
 	}
-	function sleep(ms){
-		return new Promise(resolve=>{
-			setTimeout(resolve,ms)
-		});
-	}
-	onMount(()=>{
+    onMount(()=>{
         if(localStorage.getItem('user')!==undefined&&JSON.parse(localStorage.getItem('user')).username!==undefined){
             location.href='/user/me'
         }
@@ -49,10 +49,12 @@
 <Tip text={errtext} display={errshow} />
 <Tip text="请输入用户名" display={tips1} />
 <Tip text="请输入密码" display={tips2} />
+<Tip text="请输入昵称" display={tips3} />
 <div>
 	<h1>Login</h1>
 	<input type="text" name="username" bind:value={username} class="inline-block" placeholder="用户名"/>
+    <input type="text" name="nickname" bind:value={nickname} class="inline-block" placeholder="昵称"/>
 	<input type="password" name="password" bind:value={password} placeholder="密码"/>
 	<button on:click={loginHandler} disabled={dis}>Login</button>
 </div>
-<a href="/login/register">还没账户？在此注册</a>
+<a href="/login">已有账户？在此登录</a>
