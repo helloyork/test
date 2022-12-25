@@ -55,6 +55,7 @@
 	<input type="text" name="username" bind:value={username} class="inline-block" placeholder="用户名"/>
     <input type="text" name="nickname" bind:value={nickname} class="inline-block" placeholder="昵称"/>
 	<input type="password" name="password" bind:value={password} placeholder="密码"/>
-	<button on:click={loginHandler} disabled={dis}>Login</button>
+	<button on:click={loginHandler} disabled={dis}>注册</button>
 </div>
+<h6>用户名在注册后将无法修改</h6>
 <a href="/login">已有账户？在此登录</a>

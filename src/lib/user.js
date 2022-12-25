@@ -12,15 +12,15 @@ export async function locallogin(ls) {
         console.log(value);
         return false;
     } else if (value.username !== undefined && value.password !== undefined) {
-        return (await login(value.username, value.password));
+        return (await login(value.username, value.password, false));
     }
 }
 
-export function login(username, password) {
+export function login(username, password, log) {
     return new Promise((resolve,reject) => {
         fetch('/api/user/login', {
             method: 'POST',
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({ username, password, log })
         })
             .then((result) => result.json())
             .then(resolve);

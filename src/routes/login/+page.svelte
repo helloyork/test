@@ -53,6 +53,6 @@
 	<h1>Login</h1>
 	<input type="text" name="username" bind:value={username} class="inline-block" placeholder="用户名"/>
 	<input type="password" name="password" bind:value={password} placeholder="密码"/>
-	<button on:click={loginHandler} disabled={dis}>Login</button>
+	<button on:click={loginHandler} disabled={dis}>登录</button>
 </div>
 <a href="/login/register">还没账户？在此注册</a>

@@ -4,7 +4,7 @@
  */
 
 import { redirect } from '@sveltejs/kit';
-import { login } from '../../../../lib/server/database/db';
+import { userbase, logbase } from '../../../../lib/server/database/db';
 import md5 from 'md5';
 
 /** 
@@ -15,7 +15,7 @@ export async function POST({ request }) {
     if (!value.username || !value.password) return new Response(JSON.stringify(
         { pass: false, code: 1, message: '请提交有效信息', result: {} }
     ), { status: 401 })
-    let user = await login(value.username);
+    let user = await userbase.login(value.username);
     console.log(user);
     if (!user.ok) return new Response(JSON.stringify(
         { pass: false, code: 2, message: '身份验证失败,请尽快联系网站搭建者', result: {} }
@@ -26,6 +26,7 @@ export async function POST({ request }) {
     if (md5(value.password) != user.result[0].password) return new Response(JSON.stringify(
         { pass: false, code: 4, message: '请输入正确的密码', result: {} }
     ), { status: 401 })
+    if (value.log===undefined||value.log) logbase.log('login', 'true', `[${user.result[0].username}]Login successful`);
     return new Response(JSON.stringify({
         pass: true, code: 0, message: '验证成功',
         result: {
