@@ -1,9 +1,11 @@
 <script>
 	import '@mdi/font/css/materialdesignicons.min.css';
 	import 'fluent-svelte/theme.css';
+	import { onMount } from 'svelte';
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
+	import { locallogin } from '$lib/user.js';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -11,30 +13,39 @@
 		{ label: '测试', target: '/test' }
 	];
 	let userOpen = false;
-
-	$: login = false;
+	$: loginstate = false;
 	$: UserNavs = [
-		login
-			? {
-					href: '/user/me',
-					text: '我',
-					id: 'me'
-			  }
-			: {},
+		loginstate ? { href: '/user/me', text: '我', id: 'me' } : {},
 		{
-			href: login ? '/' : '/login',
-			text: login ? '登出' : '登录',
+			href: loginstate ? '/' : '/login',
+			text: loginstate ? '登出' : '登录',
 			id: 'login/logout',
 			clickHandler: (info) => {
 				if (info.text == '登出') {
-					alert('你登出啦（敷衍');
+					localStorage.setItem('user', JSON.stringify({}));
+					location.href = '/';
 				}
 			}
 		}
 	];
+	onMount(() => {
+		locallogin(localStorage).then((r) => {
+			if (r) {
+				localStorage.setItem('user', JSON.stringify(r.result));
+				console.log('login sc');
+				console.log(localStorage);
+				loginstate = true;
+			} else {
+				console.log(localStorage);
+				console.log('login fs');
+			}
+		});
+	});
+	const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
+		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
+		userOpen = false;
+	};
 </script>
-
-
 
 <nav class="bg-gray-800">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -81,7 +92,7 @@
 					<img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" />
 					<a
 						class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300 no-underline"
-						style="margin-right: 20px;margin-left: 10px;"
+						style="margin-right: 20px;margin-left: 10px; =="
 						href="/"
 						alt="Nomen 小队">Nomen 小队</a
 					>
@@ -119,7 +130,7 @@
 						/>
 					</svg>
 				</button>
-				<div class="relative ml-3 m-3">
+				<div class="relative ml-3 m-3" on:focusout={handleDropdownFocusLoss}>
 					<div>
 						<button
 							type="button"
@@ -191,4 +202,3 @@
 </nav>
 
 <slot />
-

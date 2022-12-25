@@ -19,7 +19,7 @@ async function sql(cmd, ...params) {
         if (typeof cmd != 'object' || !cmd.length) throw new Error('use the tag function to call sql');
         db[(cmd[0] && (cmd[0].includes('SELECT') || cmd[0].includes('select'))) ? 'all' : 'run']
             (cmd.join('?'), params, (err, rows) => {
-                resolve({ ok: err?false:true, result: err ? err : rows });
+                resolve({ ok: err ? false : true, result: err ? err : rows });
             })
     })
 }
