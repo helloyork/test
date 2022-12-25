@@ -13,6 +13,7 @@
 		{ label: '测试', target: '/test' }
 	];
 	let userOpen = false;
+	let mobileMenuOpen = false;
 	$: loginstate = false;
 	$: UserNavs = [
 		loginstate ? { href: '/user/me', text: '我', id: 'me' } : {},
@@ -57,10 +58,11 @@
 					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
+					on:click={()=>mobileMenuOpen=!mobileMenuOpen}
 				>
 					<span class="sr-only">Open main menu</span>
 					<svg
-						class="block h-6 w-6"
+						class="{mobileMenuOpen? 'hidden': 'block'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
@@ -75,7 +77,7 @@
 						/>
 					</svg>
 					<svg
-						class="hidden h-6 w-6"
+						class="{mobileMenuOpen? 'block': 'hidden'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
@@ -191,9 +193,8 @@
 		</div>
 	</div>
 
-	<!-- Mobile menu, show/hide based on menu state. -->
 	<div class="sm:hidden" id="mobile-menu">
-		<div class="space-y-1 px-2 pt-2 pb-3">
+		<div class="{mobileMenuOpen? 'block': 'hidden'} space-y-1 px-2 pt-2 pb-3">
 			{#each links as item}
 				<NavLink {...item} type="mobile" />
 			{/each}
