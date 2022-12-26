@@ -90,7 +90,7 @@
 			</div>
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 				<div class="flex flex-shrink-0 items-center">
-					<img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" />
+					<img class="block h-5 w-auto lg:block" src="/gray.png" alt="" />
 					<a
 						class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300 no-underline"
 						style="margin-right: 20px;margin-left: 10px; =="
@@ -111,7 +111,7 @@
 			>
 				<button
 					type="button"
-					class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+					class="hidden rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 sm:block"
 				>
 					<span class="sr-only">View notifications</span>
 					<svg
@@ -203,4 +203,11 @@
 	</div>
 </nav>
 
+
+
 <slot />
+
+
+<div class="flex">
+
+</div>
