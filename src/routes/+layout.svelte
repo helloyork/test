@@ -1,9 +1,11 @@
 <script>
 	import '@mdi/font/css/materialdesignicons.min.css';
 	import 'fluent-svelte/theme.css';
+	import { onMount } from 'svelte';
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
+	import { locallogin } from '$lib/user.js';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -11,30 +13,39 @@
 		{ label: '测试', target: '/test' }
 	];
 	let userOpen = false;
-
-	$: login = false;
+	let mobileMenuOpen = false;
+	$: loginstate = false;
 	$: UserNavs = [
-		login
-			? {
-					href: '/user/me',
-					text: '我',
-					id: 'me'
-			  }
-			: {},
+		loginstate ? { href: '/user/me', text: '我', id: 'me' } : {},
+		loginstate ? { href: '/user/settings', text: '设置', id: 'settings' } : {},
 		{
-			href: login ? '/' : '/login',
-			text: login ? '登出' : '登录',
+			href: loginstate ? '/' : '/login',
+			text: loginstate ? '登出' : '登录',
 			id: 'login/logout',
 			clickHandler: (info) => {
 				if (info.text == '登出') {
-					alert('你登出啦（敷衍');
+					localStorage.setItem('user', JSON.stringify({}));
+					location.href = '/';
 				}
 			}
-		}
+		},
 	];
+	onMount(() => {
+		locallogin(localStorage).then((r) => {
+			if (r) {
+				localStorage.setItem('user', JSON.stringify(r.result));
+				console.log('login sc');
+				loginstate = true;
+			} else {
+				console.log('login fs');
+			}
+		});
+	});
+	const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
+		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
+		userOpen = false;
+	};
 </script>
-
-
 
 <nav class="bg-gray-800">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -46,10 +57,11 @@
 					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
+					on:click={() => (mobileMenuOpen = !mobileMenuOpen)}
 				>
 					<span class="sr-only">Open main menu</span>
 					<svg
-						class="block h-6 w-6"
+						class="{mobileMenuOpen ? 'hidden' : 'block'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
@@ -64,7 +76,7 @@
 						/>
 					</svg>
 					<svg
-						class="hidden h-6 w-6"
+						class="{mobileMenuOpen ? 'block' : 'hidden'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
@@ -81,7 +93,7 @@
 					<img class="block h-8 w-auto lg:block" src="/favicon.png" alt="" />
 					<a
 						class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300 no-underline"
-						style="margin-right: 20px;margin-left: 10px;"
+						style="margin-right: 20px;margin-left: 10px; =="
 						href="/"
 						alt="Nomen 小队">Nomen 小队</a
 					>
@@ -102,7 +114,6 @@
 					class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
 				>
 					<span class="sr-only">View notifications</span>
-					<!-- Heroicon name: outline/bell -->
 					<svg
 						class="h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
@@ -119,23 +130,26 @@
 						/>
 					</svg>
 				</button>
-				<div class="relative ml-3 m-3">
+				<div class="relative ml-3 m-3" on:focusout={handleDropdownFocusLoss}>
 					<div>
 						<button
 							type="button"
-							class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+							class="flex rounded-full text-sm hover:text-white text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2  focus:ring-offset-gray-800"
 							id="user-menu-button"
-							aria-expanded="false"
-							aria-haspopup="true"
 							on:click={() => (userOpen = !userOpen)}
 						>
 							<span class="sr-only">Open user menu</span>
+							<h6 class="{loginstate ? 'hidden' : 'block'} text-gray-300 m-1.5">未登录</h6>
 							<svg
 								width="27"
 								height="27"
 								viewBox="0 0 48 48"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
+								class='{loginstate ? 'block' : 'hidden'} h-6 w-6'
+								stroke-width="1.5"
+								stroke="currentColor"
+								aria-hidden="true"
 								><path
 									fill-rule="evenodd"
 									clip-rule="evenodd"
@@ -180,9 +194,8 @@
 		</div>
 	</div>
 
-	<!-- Mobile menu, show/hide based on menu state. -->
 	<div class="sm:hidden" id="mobile-menu">
-		<div class="space-y-1 px-2 pt-2 pb-3">
+		<div class="{mobileMenuOpen ? 'block' : 'hidden'} space-y-1 px-2 pt-2 pb-3">
 			{#each links as item}
 				<NavLink {...item} type="mobile" />
 			{/each}
@@ -191,4 +204,3 @@
 </nav>
 
 <slot />
-
