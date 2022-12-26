@@ -17,6 +17,7 @@
 	$: loginstate = false;
 	$: UserNavs = [
 		loginstate ? { href: '/user/me', text: '我', id: 'me' } : {},
+		loginstate ? { href: '/user/settings', text: '设置', id: 'settings' } : {},
 		{
 			href: loginstate ? '/' : '/login',
 			text: loginstate ? '登出' : '登录',
@@ -27,7 +28,7 @@
 					location.href = '/';
 				}
 			}
-		}
+		},
 	];
 	onMount(() => {
 		locallogin(localStorage).then((r) => {
@@ -56,11 +57,11 @@
 					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
-					on:click={()=>mobileMenuOpen=!mobileMenuOpen}
+					on:click={() => (mobileMenuOpen = !mobileMenuOpen)}
 				>
 					<span class="sr-only">Open main menu</span>
 					<svg
-						class="{mobileMenuOpen? 'hidden': 'block'} h-6 w-6"
+						class="{mobileMenuOpen ? 'hidden' : 'block'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
@@ -75,7 +76,7 @@
 						/>
 					</svg>
 					<svg
-						class="{mobileMenuOpen? 'block': 'hidden'} h-6 w-6"
+						class="{mobileMenuOpen ? 'block' : 'hidden'} h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
@@ -113,7 +114,6 @@
 					class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
 				>
 					<span class="sr-only">View notifications</span>
-					<!-- Heroicon name: outline/bell -->
 					<svg
 						class="h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg"
@@ -134,21 +134,22 @@
 					<div>
 						<button
 							type="button"
-							class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+							class="flex rounded-full text-sm hover:text-white text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2  focus:ring-offset-gray-800"
 							id="user-menu-button"
-							aria-expanded="false"
-							aria-haspopup="true"
 							on:click={() => (userOpen = !userOpen)}
 						>
 							<span class="sr-only">Open user menu</span>
-							<h6 class='{loginstate?'hidden':'block'} text-white m-1.5'>未登录</h6>
+							<h6 class="{loginstate ? 'hidden' : 'block'} text-gray-300 m-1.5">未登录</h6>
 							<svg
 								width="27"
 								height="27"
 								viewBox="0 0 48 48"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
-								class='{loginstate?'block':'hidden'}'
+								class='{loginstate ? 'block' : 'hidden'} h-6 w-6'
+								stroke-width="1.5"
+								stroke="currentColor"
+								aria-hidden="true"
 								><path
 									fill-rule="evenodd"
 									clip-rule="evenodd"
@@ -194,7 +195,7 @@
 	</div>
 
 	<div class="sm:hidden" id="mobile-menu">
-		<div class="{mobileMenuOpen? 'block': 'hidden'} space-y-1 px-2 pt-2 pb-3">
+		<div class="{mobileMenuOpen ? 'block' : 'hidden'} space-y-1 px-2 pt-2 pb-3">
 			{#each links as item}
 				<NavLink {...item} type="mobile" />
 			{/each}
