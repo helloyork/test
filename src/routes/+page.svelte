@@ -87,9 +87,8 @@
 </div>
 
 <div class="isolate bg-white">
-	<span class="flex" style=""><img src='/THIS IS A WAR.png' alt="THIS IS A WAR"/></span>
 	<main>
-		<div class="relative px-6 lg:px-8">
+		<div class="block relative px-6 lg:px-8" style="background-image: url(/T.png);background-repeat: no-repeat;background-size: 100% 100%;">
 			<div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
 				<div>
 					<div class="hidden sm:mb-8 sm:flex sm:justify-center">
