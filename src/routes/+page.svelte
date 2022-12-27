@@ -1,5 +1,6 @@
 <script lang="ts">
 	let AnnouncingShow = true;
+	import Underline from '../lib/underline.svelte';
 </script>
 
 <div class="bg-indigo-700 {AnnouncingShow ? 'block' : 'hidden'}">
@@ -105,10 +106,7 @@
 					</div>
 					<div>
 						<h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-5xl">
-							少年仍步青春时，引航明灯
-							<h1 class="inline-block underline decoration-indigo-500/50 decoration-8" href="#">
-								领前程
-							</h1>
+							少年仍步青春时，引航明灯、<Underline>领前程</Underline>
 						</h1>
 						<p class="mt-4 text-xl leading-9 text-gray-500  sm:text-center">一个富有潜力的队伍</p>
 						<div class="mt-20 flex gap-x-4 sm:justify-center">
