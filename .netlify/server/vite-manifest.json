@@ -1,0 +1,202 @@
+{
+  ".svelte-kit/build/index.js": {
+    "file": "index.js",
+    "src": ".svelte-kit/build/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index2.js",
+      "_index3.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/build/hooks.js"
+    ]
+  },
+  "src/routes/api/user/login/+server.ts": {
+    "file": "entries/endpoints/api/user/login/_server.ts.js",
+    "src": "src/routes/api/user/login/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_db.js"
+    ]
+  },
+  "src/routes/api/user/register/+server.js": {
+    "file": "entries/endpoints/api/user/register/_server.js",
+    "src": "src/routes/api/user/register/+server.js",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_db.js"
+    ]
+  },
+  "src/routes/test/+server.ts": {
+    "file": "entries/endpoints/test/_server.ts.js",
+    "src": "src/routes/test/+server.ts",
+    "isEntry": true
+  },
+  "src/routes/user/[slug]/+server.ts": {
+    "file": "entries/endpoints/user/_slug_/_server.ts.js",
+    "src": "src/routes/user/[slug]/+server.ts",
+    "isEntry": true
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout-01dcc0b2.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/materialdesignicons-webfont-861aea05.eot",
+      "_app/immutable/assets/materialdesignicons-webfont-e52d60f6.woff2",
+      "_app/immutable/assets/materialdesignicons-webfont-48d3eec6.woff",
+      "_app/immutable/assets/materialdesignicons-webfont-bd725a7a.ttf"
+    ]
+  },
+  "src/routes/+error.svelte": {
+    "file": "entries/pages/_error.svelte.js",
+    "src": "src/routes/+error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_error-13a740d3.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/+page.server.ts": {
+    "file": "entries/pages/_page.server.ts.js",
+    "src": "src/routes/+page.server.ts",
+    "isEntry": true
+  },
+  "src/routes/about/+page.svelte": {
+    "file": "entries/pages/about/_page.svelte.js",
+    "src": "src/routes/about/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/admin/+page.svelte": {
+    "file": "entries/pages/admin/_page.svelte.js",
+    "src": "src/routes/admin/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/contact/+page.svelte": {
+    "file": "entries/pages/contact/_page.svelte.js",
+    "src": "src/routes/contact/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/login/+page.svelte": {
+    "file": "entries/pages/login/_page.svelte.js",
+    "src": "src/routes/login/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_tip.js"
+    ]
+  },
+  "src/routes/login/+page.server.ts": {
+    "file": "entries/pages/login/_page.server.ts.js",
+    "src": "src/routes/login/+page.server.ts",
+    "isEntry": true
+  },
+  "src/routes/login/register/+page.svelte": {
+    "file": "entries/pages/login/register/_page.svelte.js",
+    "src": "src/routes/login/register/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_tip.js"
+    ]
+  },
+  "src/routes/storage/+page.svelte": {
+    "file": "entries/pages/storage/_page.svelte.js",
+    "src": "src/routes/storage/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/test/+page.svelte": {
+    "file": "entries/pages/test/_page.svelte.js",
+    "src": "src/routes/test/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_index3.js"
+    ]
+  },
+  "src/routes/user/+page.svelte": {
+    "file": "entries/pages/user/_page.svelte.js",
+    "src": "src/routes/user/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/user/me/+page.svelte": {
+    "file": "entries/pages/user/me/_page.svelte.js",
+    "src": "src/routes/user/me/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/user/settings/+page.svelte": {
+    "file": "entries/pages/user/settings/_page.svelte.js",
+    "src": "src/routes/user/settings/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_index.js": {
+    "file": "chunks/index.js"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js"
+  },
+  "_index3.js": {
+    "file": "chunks/index3.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_db.js": {
+    "file": "chunks/db.js"
+  },
+  "_tip.js": {
+    "file": "chunks/tip.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  ".svelte-kit/build/hooks.js": {
+    "file": "chunks/hooks.js",
+    "src": ".svelte-kit/build/hooks.js",
+    "isDynamicEntry": true
+  },
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot": {
+    "file": "_app/immutable/assets/materialdesignicons-webfont-861aea05.eot",
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot"
+  }
+}
