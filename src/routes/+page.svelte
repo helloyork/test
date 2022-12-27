@@ -1,6 +1,7 @@
 <script lang="ts">
 	let AnnouncingShow = true;
 	import Underline from '../lib/underline.svelte';
+	let size=true;
 </script>
 
 <div class="bg-indigo-700 {AnnouncingShow ? 'block' : 'hidden'}">
@@ -86,6 +87,7 @@
 </div>
 
 <div class="isolate bg-white">
+	<span class="flex" style=""><img src='/THIS IS A WAR.png' alt="THIS IS A WAR"/></span>
 	<main>
 		<div class="relative px-6 lg:px-8">
 			<div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
@@ -106,7 +108,7 @@
 					</div>
 					<div>
 						<h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-5xl">
-							少年仍步青春时，引航明灯<Underline>领前程</Underline>
+							少年仍步青春时，引航明灯<Underline size>领前程</Underline>
 						</h1>
 						<p class="mt-4 text-xl leading-9 text-gray-500  sm:text-center">一个富有潜力的队伍</p>
 						<div class="mt-20 flex gap-x-4 sm:justify-center">
@@ -213,7 +215,9 @@
 						>
 					</div>
 					<div class="sm:min-w-0 sm:flex-1">
-						<p class="text-lg font-semibold leading-8 text-gray-900">范围广</p>
+						<p class="text-lg font-semibold leading-8 text-gray-900">
+							<Underline>范围广</Underline>
+						</p>
 						<p class="mt-2 text-base leading-7 text-gray-600">
 							发展目标广，对众多尚未饱和拥有市场的领域进发，拥有明确的核心目标和方向
 						</p>
@@ -249,7 +253,9 @@
 						>
 					</div>
 					<div class="sm:min-w-0 sm:flex-1">
-						<p class="text-lg font-semibold leading-8 text-gray-900">领域深</p>
+						<p class="text-lg font-semibold leading-8 text-gray-900">
+							<Underline>领域深</Underline>
+						</p>
 						<p class="mt-2 text-base leading-7 text-gray-600">
 							拥有精通各个领域的人才，各个部门取长补短，更好的发展与培养人才
 						</p>
@@ -294,7 +300,9 @@
 						>
 					</div>
 					<div class="sm:min-w-0 sm:flex-1">
-						<p class="text-lg font-semibold leading-8 text-gray-900">大佬云集</p>
+						<p class="text-lg font-semibold leading-8 text-gray-900">
+							<Underline>大佬云集</Underline>
+						</p>
 						<p class="mt-2 text-base leading-7 text-gray-600">
 							众多大佬远程指导，更好的学习与理解领域知识
 						</p>
@@ -323,7 +331,9 @@
 						</svg>
 					</div>
 					<div class="sm:min-w-0 sm:flex-1">
-						<p class="text-lg font-semibold leading-8 text-gray-900">队员活跃</p>
+						<p class="text-lg font-semibold leading-8 text-gray-900">
+							<Underline>队员活跃</Underline>
+						</p>
 						<p class="mt-2 text-base leading-7 text-gray-600">千里相隔，汇聚网络</p>
 					</div>
 				</div>

@@ -1,6 +1,13 @@
 <script>
-    export const href = '';
+	export const href = '';
+	export let size = false;
 </script>
-<a class="inline-block underline decoration-indigo-500/50 decoration-8 hover:text-black" {href}>
-    <slot></slot>
+
+<a
+	class="inline-block underline decoration-indigo-500/50 {size==true
+		? 'decoration-8'
+		: 'decoration-4'} hover:text-black underline-offset-0"
+	{href}
+>
+	<slot />
 </a>
