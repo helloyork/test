@@ -114,14 +114,14 @@
 						<div class="mt-20 flex gap-x-4 sm:justify-center">
 							<a
 								href="/about"
-								class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-700 hover:bg-indigo-700 hover:ring-indigo-600"
+								class="inline-block no-underline rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-700 hover:bg-indigo-700 hover:ring-indigo-600"
 							>
 								加入我们
 								<span class="text-indigo-200" aria-hidden="true">&rarr;</span>
 							</a>
 							<a
 								href="/about"
-								class="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+								class="inline-block no-underline rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
 							>
 								联系我们
 							</a>
