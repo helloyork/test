@@ -50,7 +50,6 @@
 					<span class="md:hidden items-center" style=""
 						><p class="items-center" style="margin:0 !important; margin-left:10px;">
 							与我们加入网站的搭建！
-							
 						</p></span
 					>
 					<span class="hidden md:inline items-center" style=""
@@ -58,7 +57,6 @@
 							<strong>我们需要你！</strong>加入网站的搭建，成为第一个得知新消息的人。
 						</p></span
 					>
-					
 				</p>
 			</div>
 			<Underline href="/about"><h6 class="text-white">与我们联系</h6></Underline>
