@@ -1,7 +1,7 @@
 <script lang="ts">
 	let AnnouncingShow = true;
 	import Underline from '../lib/underline.svelte';
-	let size=true;
+	let size = true;
 </script>
 
 <div class="bg-indigo-700 {AnnouncingShow ? 'block' : 'hidden'}">
@@ -47,14 +47,18 @@
 						></svg
 					>
 				</span>
-				<p class="ml-3 truncate font-medium text-white">
-					<span class="md:hidden text-ellipsis flex" style="line-height: normal;padding-top:50%;"
+				<p class="ml-3 truncate font-medium text-white align-middle">
+					<span
+						class="md:hidden text-ellipsis flex"
+						style="line-height: 50%; padding-top:50%; white-space: nowrap;"
 						>与我们加入网站的搭建！<a
 							class="text-white text-ellipsis inline-block underline decoration-indigo-500/70 decoration-8 pl-2 hover:text-gray-300"
 							href="/about">与我们联系</a
 						></span
 					>
-					<span class="hidden md:inline" style="line-height: normal; padding-top:50%;"
+					<span
+						class="hidden md:inline"
+						style="line-height: 50%; padding-top:50%; white-space: nowrap;"
 						>我们需要你！加入网站的搭建，成为第一个得知新消息的人。 <a
 							class="text-white inline-block underline decoration-indigo-500/70 decoration-8 pl-2 hover:text-gray-300"
 							href="/about">与我们联系</a
@@ -88,7 +92,10 @@
 
 <div class="isolate bg-white">
 	<main>
-		<div class="block relative px-6 lg:px-8" style="background-image: url(/T.png);background-repeat: no-repeat;background-size: 100% 100%;">
+		<div
+			class="block relative px-6 lg:px-8"
+			style="background-image: url(/T.png);background-repeat: no-repeat;background-size: 100% 100%;"
+		>
 			<div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
 				<div>
 					<div class="hidden sm:mb-8 sm:flex sm:justify-center">
