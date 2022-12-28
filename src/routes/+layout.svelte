@@ -231,7 +231,7 @@
 	class="flex bg-gray-800 text-white"
 	style="width:100%; vertical-align: middle;"
 >
-	<div class="flex items-center" style="margin:50px;">
+	<div class="flex items-center" style="margin:70px;">
 		<img class="flex h-8 w-auto sm:item-center" src="/light.png" alt="" />
 		<a
 			class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300 no-underline"
@@ -242,7 +242,7 @@
 		>
 	</div>
 	{#each footLinks as links}
-		<ul class="hidden sm:inline-block" style="text-align: center; margin:20px; margin-left:30px">
+		<ul class="hidden sm:inline-block" style="text-align: center; margin:20px; margin-left:30px; margin-top:30px;">
 			<h6 class="text-gray-400 truncate" style="margin-bottom: 10px;">{links.name}</h6>
 			{#each links.links as link}
 				<li><a href={link.target} class="truncate text-gray-300 hover:text-gray-50 no-underline">{link.label}</a></li>
@@ -251,7 +251,7 @@
 	{/each}
 
 	<div class="ml-7 hidden sm:inline-block">
-		<h6 class="text-gray-500 truncate" style="margin: 20px;margin-bottom:10px;">网站很棒？与朋友分享我们</h6>
+		<h6 class="text-gray-500 truncate" style="margin: 20px;margin-bottom:10px; margin-top:30px;">网站很棒？与朋友分享我们</h6>
 		<ul class="inline-block ml-10 truncate no-underline" style="">
 			<li style="float: right; margin:5px;">
 				<a href="https://www.douyin.com/">
