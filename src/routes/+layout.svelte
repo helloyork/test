@@ -252,7 +252,7 @@
 
 	<div class="ml-7 hidden sm:inline-block">
 		<h6 class="text-gray-500 truncate" style="margin: 20px;margin-bottom:10px; margin-top:30px;">网站很棒？与朋友分享我们</h6>
-		<ul class="inline-block ml-10 truncate no-underline" style="">
+		<ul class="inline-block ml-4 truncate no-underline" style="">
 			<li style="float: right; margin:5px;">
 				<a href="https://www.douyin.com/">
 					<svg
