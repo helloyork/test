@@ -4,10 +4,10 @@
 	let size = true;
 </script>
 
-<div class="bg-indigo-700 {AnnouncingShow ? 'block' : 'hidden'}">
-	<div class="mx-auto max-w-7xl py-1 px-3 sm:px-6 lg:px-8">
-		<div class="flex flex-wrap items-center justify-between">
-			<div class="flex w-0 flex-1 items-center">
+<div class="bg-indigo-700 {AnnouncingShow ? 'block' : 'hidden'}  items-center">
+	<div class="mx-auto max-w-7xl py-1 px-3 sm:px-6 lg:px-8  items-center">
+		<div class="flex flex-wrap justify-between  items-center">
+			<div class="flex w-0 flex-1  items-center">
 				<span class="flex rounded-lg bg-indigo-800 p-2">
 					<!-- Heroicon name: outline/megaphone -->
 					<svg
@@ -57,7 +57,7 @@
 						></span
 					>
 					<span
-						class="hidden md:inline  items-center"
+						class="hidden md:inline items-center"
 						>我们需要你！加入网站的搭建，成为第一个得知新消息的人。 <a
 							class="text-white inline-block underline decoration-indigo-500/70 decoration-8 pl-2 hover:text-gray-300"
 							href="/about">与我们联系</a
