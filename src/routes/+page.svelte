@@ -67,10 +67,7 @@
 						style="line-height: 50%; padding-top:50%; white-space: nowrap;"
 						><h6 class="items-center">
 							我们需要你！加入网站的搭建，成为第一个得知新消息的人。
-							<a
-								class="text-white inline-block underline decoration-indigo-600/70 decoration-8 pl-2 hover:text-gray-300"
-								href="/about">与我们联系</a
-							>
+							<Underline href='#'><h6 class="text-white">与我们联系</h6></Underline>
 						</h6></span
 					>
 				</p>
