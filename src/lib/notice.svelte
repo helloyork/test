@@ -50,17 +50,18 @@
 					<span class="md:hidden items-center" style=""
 						><p class="items-center" style="margin:0 !important; margin-left:10px;">
 							与我们加入网站的搭建！
-							<Underline href="/about"><h6 class="text-white">与我们联系</h6></Underline>
+							
 						</p></span
 					>
 					<span class="hidden md:inline items-center" style=""
 						><p class="items-center" style="margin:0 !important; margin-left:10px;">
 							<strong>我们需要你！</strong>加入网站的搭建，成为第一个得知新消息的人。
-							<Underline href="/about"><h6 class="text-white">与我们联系</h6></Underline>
 						</p></span
 					>
+					
 				</p>
 			</div>
+			<Underline href="/about"><h6 class="text-white">与我们联系</h6></Underline>
 			<div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
 				<button
 					type="button"
