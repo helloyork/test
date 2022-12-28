@@ -245,7 +245,7 @@
 		<ul class="hidden sm:inline-block" style="text-align: center; margin:20px; margin-left:30px">
 			<h6 class="text-gray-400 truncate" style="margin-bottom: 10px;">{links.name}</h6>
 			{#each links.links as link}
-				<li><a href={link.target} class="truncate text-gray-300 hover:text-gray-50">{link.label}</a></li>
+				<li><a href={link.target} class="truncate text-gray-300 hover:text-gray-50 no-underline">{link.label}</a></li>
 			{/each}
 		</ul>
 	{/each}
