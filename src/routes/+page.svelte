@@ -62,14 +62,14 @@
 		<div class="sm:text-center">
 			<!-- <h2 class="text-lg font-semibold leading-8 text-indigo-600">文字</h2> -->
 			<p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">关于我们</p>
-			<p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">NOMEN TEAM</p>
+			<p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">ABOUT US</p>
 		</div>
 
 		<div class="mt-20 max-w-lg sm:mx-auto md:max-w-none">
 			<div class="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
 					>
 						<!-- Heroicon name: outline/globe-alt -->
 						<svg
@@ -147,7 +147,7 @@
 
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
 					>
 						<!-- Heroicon name: outline/scale -->
 						<svg
@@ -185,7 +185,7 @@
 
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
 					>
 						<!-- Heroicon name: outline/bolt -->
 						<svg
@@ -232,7 +232,7 @@
 
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
 					>
 						<!-- Heroicon name: outline/device-phone-mobile -->
 						<svg
