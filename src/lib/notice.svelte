@@ -48,16 +48,16 @@
 				</span>
 				<p class="ml-3 truncate font-medium text-white  items-center">
 					<span class="md:hidden items-center" style="line-height: 50%;"
-						><h6 class="items-center" style="line-height: 50%;">
+						><p class="items-center" style="line-height: 50%;margin:0 !important;">
 							与我们加入网站的搭建！
 							<Underline href="/about"><h6 class="text-white">与我们联系</h6></Underline>
-						</h6></span
+						</p></span
 					>
 					<span class="hidden md:inline items-center" style=""
-						><h6 class="items-center">
+						><p class="items-center" style="margin:0 !important;">
 							<strong>我们需要你！</strong>加入网站的搭建，成为第一个得知新消息的人。
 							<Underline href="/about"><h6 class="text-white">与我们联系</h6></Underline>
-						</h6></span
+						</p></span
 					>
 				</p>
 			</div>
