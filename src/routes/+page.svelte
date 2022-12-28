@@ -9,7 +9,7 @@
 	<main>
 		<div
 			class="block relative px-6 lg:px-8"
-			style="background-image: url(/T.png);background-repeat: no-repeat;background-size: 100% 100%;"
+			style="background-image: url(/T.png);background-repeat: no-repeat;background-size: 100% 100%; background-size: cover;"
 		>
 			<div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
 				<div>

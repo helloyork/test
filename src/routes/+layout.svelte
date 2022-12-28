@@ -23,16 +23,13 @@
 			name: '本页导航',
 			links: [
 				{ label: '主页', target: '/' },
-				{ label: '关于', target: '/about' }
+				{ label: '关于我们', target: '/about' },
+				{ label: '登录', target: '/login' },
 			]
 		},
 		{
 			name: '相关链接',
-			links: []
-		},
-		{
-			name: '友情链接',
-			links: []
+			links: [{ label: 'AOOS', target: 'https://AOOS.com' }]
 		}
 	];
 	let userOpen = false;
@@ -232,9 +229,9 @@
 
 <div
 	class="flex bg-gray-800 text-white"
-	style="width:100%; grid-template-columns: auto auto auto; grid-gap: 10px; vertical-align: middle;"
+	style="width:100%; vertical-align: middle;"
 >
-	<div class="flex items-center" style="position:relative; margin:50px;">
+	<div class="flex items-center" style="margin:50px;">
 		<img class="flex h-8 w-auto sm:item-center" src="/light.png" alt="" />
 		<a
 			class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300 no-underline"
@@ -245,12 +242,108 @@
 		>
 	</div>
 	{#each footLinks as links}
-		<ul class="hidden sm:inline-block" style="text-align: center; margin:20px;">
+		<ul class="hidden sm:inline-block" style="text-align: center; margin:20px; margin-left:30px">
 			<h6 class="text-gray-300 truncate" style="margin-bottom: 10px;">{links.name}</h6>
 			{#each links.links as link}
 				<li><a href={link.target} class="hover:text-white truncate">{link.label}</a></li>
 			{/each}
 		</ul>
 	{/each}
-	<div />
+
+	<div class="ml-7 hidden sm:inline-block">
+		<h6 class="text-gray-500 truncate" style="margin: 20px;margin-bottom:10px;">网站很棒？与朋友分享我们</h6>
+		<ul class="inline-block ml-10 truncate" style="">
+			<li style="float: right; margin:5px;">
+				<a href="https://www.douyin.com/">
+					<svg
+						width="27"
+						height="27"
+						viewBox="0 0 48 48"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						><path
+							d="M21.358 19.1399C15.4694 18.8558 11.3762 20.9553 9.07838 25.4384C5.63169 32.163 8.48026 43.1666 19.9788 43.1666C31.4774 43.1666 31.81 32.0554 31.81 30.8914C31.81 30.1154 31.81 25.7764 31.81 17.8746C34.2694 19.4323 36.343 20.37 38.0308 20.6877C39.7186 21.0053 40.7915 21.1461 41.2497 21.11V14.6343C39.6886 14.4461 38.3386 14.0873 37.1997 13.5581C35.4913 12.7643 32.1037 10.5611 32.1037 7.33208C32.106 7.34787 32.106 6.51493 32.1037 4.83325H24.9857C24.9645 20.6493 24.9645 29.3353 24.9857 30.8914C25.0175 33.2255 23.2068 36.4905 19.5355 36.4905C15.8642 36.4905 14.0535 33.2281 14.0535 31.1239C14.0535 29.8357 14.496 27.9685 16.3251 26.5858C17.4098 25.7658 18.9153 25.4384 21.358 25.4384C21.358 24.6828 21.358 22.5833 21.358 19.1399Z"
+							fill="none"
+							stroke="#ffffff"
+							stroke-width="3"
+							stroke-linejoin="round"
+						/></svg
+					>
+				</a>
+			</li>
+			<li style="float: right; margin:5px;">
+				<a href="https://www.douyin.com/">
+					<svg
+						width="27"
+						height="27"
+						viewBox="0 0 48 48"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						><path
+							d="M24.0003 42.3334C34.1255 42.3334 42.3337 34.1253 42.3337 24.0001C42.3337 13.8749 34.1255 5.66675 24.0003 5.66675C13.8751 5.66675 5.66699 13.8749 5.66699 24.0001C5.66699 26.4858 6.80727 27.6871 8.61419 28.7448C10.4211 29.8025 13.8204 29.6269 16.1327 31.7014C18.445 33.776 18.6011 37.1507 19.0799 38.7905C19.5588 40.4303 21.5146 42.3334 24.0003 42.3334Z"
+							fill="none"
+							stroke="#ffffff"
+							stroke-width="3"
+							stroke-linejoin="round"
+						/><path
+							d="M19.5264 18.5412C18.988 19.8493 18.7188 21.3866 18.7188 23.153C18.7188 24.8329 18.8971 26.496 19.2539 28.1424L19.2539 28.1424C19.6113 29.7916 21.2381 30.8389 22.8873 30.4815C22.9472 30.4685 23.0067 30.4537 23.0657 30.4372C24.8653 29.9322 26.4325 29.2711 27.7673 28.454C29.0152 27.6899 30.1779 26.7253 31.2556 25.56L31.2556 25.56C32.4013 24.3211 32.3258 22.3879 31.0868 21.2421C31.0514 21.2094 31.0152 21.1775 30.9783 21.1465C29.7116 20.0817 28.3858 19.1254 27.0008 18.2774C25.5547 17.3921 24.1384 16.8579 22.7519 16.6749L22.7518 16.6749C21.3779 16.4935 20.0539 17.2596 19.5264 18.5412Z"
+							fill="none"
+							stroke="#ffffff"
+							stroke-width="3"
+							stroke-linejoin="round"
+						/></svg
+					>
+				</a>
+			</li>
+			<li style="float: right; margin:5px;">
+				<a href="https://twitter.com/">
+					<svg
+						width="27"
+						height="27"
+						viewBox="0 0 48 48"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						><path
+							d="M5 35.7622C6.92886 36.8286 20.8914 44.8773 30.8199 38.674C40.7483 32.4707 40.2006 21.7833 40.2006 16.886C41.1 15.0018 43 14.0439 43 8.9438C41.1337 10.6678 39.2787 11.2544 37.435 10.7036C35.6287 7.94957 33.1435 6.73147 29.9794 7.04934C25.2333 7.52614 23.4969 12.1825 24.0079 18.2067C16.6899 21.9074 10.9515 15.524 7.99418 10.7036C7.00607 14.4999 6.0533 19.0576 7.99418 24.0995C9.2881 27.4607 12.3985 30.3024 17.3254 32.6246C12.3323 35.3308 8.22382 36.3766 5 35.7622Z"
+							fill="none"
+							stroke="#ffffff"
+							stroke-width="3"
+							stroke-linejoin="round"
+						/></svg
+					>
+				</a>
+			</li>
+			<li style="float: right; margin:5px;">
+				<a href="https://m.weibo.cn/">
+					<svg
+						width="27"
+						height="27"
+						viewBox="0 0 48 48"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						><path
+							d="M12.5618 16.4109C9.21763 19.6608 2.16324 29.146 7.36253 35.9317C12.5618 42.7174 27.2821 40.0998 33.359 35.3193C39.4358 30.5388 38.836 27.5848 37.5184 26.2833C36.2009 24.9818 32.3556 26.297 31.2793 24.526C30.203 22.7551 33.1957 18.3311 30.6452 16.9312C28.0948 15.5313 23.6907 20.5811 21.7015 19.269C19.7122 17.9568 23.8906 13.6729 21.7015 12.4384C19.5123 11.204 15.906 13.161 12.5618 16.4109Z"
+							fill="none"
+							stroke="#ffffff"
+							stroke-width="3"
+							stroke-linejoin="round"
+						/><path
+							d="M43.3787 16.5159C43.1435 13.3848 41.799 10.5632 39.7372 8.44277C37.7247 6.37311 35.0287 4.9715 32.0137 4.60229"
+							stroke="#ffffff"
+							stroke-width="3"
+							stroke-linecap="round"
+						/><path
+							d="M37.2919 16.9313C37.1627 15.2916 36.4247 13.8139 35.2928 12.7034C34.188 11.6195 32.7079 10.8855 31.0527 10.6921"
+							stroke="#ffffff"
+							stroke-width="3"
+							stroke-linecap="round"
+						/><path
+							d="M25 30C25 32.2091 22.3137 34 19 34C15.6863 34 13 32.2091 13 30C13 27.7909 15.6863 26 19 26C22.3137 26 25 27.7909 25 30Z"
+							fill="#ffffff"
+						/></svg
+					>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>
