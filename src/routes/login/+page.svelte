@@ -49,6 +49,17 @@
 	});
 </script>
 
+<!-- Add a menu:
+   Log in / Sign up - when the user is not logged in
+   Username / Log out - when the user is logged in
+  -->
+<div data-netlify-identity-menu />
+
+<!-- Add a simpler button:
+    Simple button that will open the modal.
+  -->
+<div data-netlify-identity-button>Login with Netlify Identity</div>
+
 <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 	<div class="w-full max-w-md space-y-8">
 		<div>

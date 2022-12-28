@@ -43,6 +43,7 @@
 		"@sveltejs/adapter-netlify": "^1.0.0",
 		"dotenv": "^16.0.3",
 		"md5": "^2.3.0",
+		"netlify-identity-widget": "^1.9.2",
 		"sqlite": "^4.1.2",
 		"sqlite3": "^5.1.2",
 		"svelte-navigator": "^3.2.2",

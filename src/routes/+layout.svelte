@@ -7,11 +7,33 @@
 	import UserNav from '../lib/UserNav/UserNav.svelte';
 	import Notice from '../lib/notice.svelte';
 	import { locallogin } from '$lib/user.js';
+	import Underline from '../lib/underline.svelte';
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
 		{ label: '项目与资源', target: '/storage' },
 		{ label: '测试', target: '/test' }
+	];
+	const footLinks = [
+		{
+			name: '与我们相关',
+			links: [{ label: 'QQ群: 2418207411', target: 'https://jq.qq.com/?_wv=1027&k=6x5B4MUl' }]
+		},
+		{
+			name: '本页导航',
+			links: [
+				{ label: '主页', target: '/' },
+				{ label: '关于', target: '/about' }
+			]
+		},
+		{
+			name: '相关链接',
+			links: []
+		},
+		{
+			name: '友情链接',
+			links: []
+		}
 	];
 	let userOpen = false;
 	let mobileMenuOpen = false;
@@ -29,7 +51,7 @@
 					location.href = '/';
 				}
 			}
-		},
+		}
 	];
 	onMount(() => {
 		locallogin(localStorage).then((r) => {
@@ -147,7 +169,7 @@
 								viewBox="0 0 48 48"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
-								class='{loginstate ? 'block' : 'hidden'} h-6 w-6'
+								class="{loginstate ? 'block' : 'hidden'} h-6 w-6"
 								stroke-width="1.5"
 								stroke="currentColor"
 								aria-hidden="true"
@@ -204,11 +226,31 @@
 	</div>
 </nav>
 
-<Notice></Notice>
+<Notice />
 
 <slot />
 
-
-<div class="flex">
-
+<div
+	class="flex bg-gray-800 text-white"
+	style="width:100%; grid-template-columns: auto auto auto; grid-gap: 10px; vertical-align: middle;"
+>
+	<div class="flex items-center" style="position:relative; margin:50px;">
+		<img class="flex h-8 w-auto sm:item-center" src="/light.png" alt="" />
+		<a
+			class="text-zinc-300 focus:outline-none text-lg visited:text-zinc-300 no-underline"
+			style="margin-right: 20px;margin-left: 10px; "
+			href="/"
+			alt="Nomen 小队"
+			><h1 size="true" class="text-white text-4xl" style="font-style:italic;">NOMEN TEAM</h1></a
+		>
+	</div>
+	{#each footLinks as links}
+		<ul class="hidden sm:inline-block" style="text-align: center; margin:20px;">
+			<h6 class="text-gray-300 truncate" style="margin-bottom: 10px;">{links.name}</h6>
+			{#each links.links as link}
+				<li><a href={link.target} class="hover:text-white truncate">{link.label}</a></li>
+			{/each}
+		</ul>
+	{/each}
+	<div />
 </div>
