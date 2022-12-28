@@ -5,6 +5,7 @@
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
+	import Notice from '../lib/notice.svelte';
 	import { locallogin } from '$lib/user.js';
 	const links = [
 		{ label: '主页', target: '/' },
@@ -203,7 +204,7 @@
 	</div>
 </nav>
 
-
+<Notice></Notice>
 
 <slot />
 

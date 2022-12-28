@@ -3,7 +3,7 @@
 	let AnnouncingShow = true;
 </script>
 
-<div class="bg-indigo-700 {AnnouncingShow ? 'block' : 'hidden'}  items-center">
+<div class="bg-indigo-700 {AnnouncingShow ? 'block' : 'hidden'} items-center">
 	<div class="mx-auto max-w-7xl py-1 px-3 sm:px-6 lg:px-8  items-center">
 		<div class="flex flex-wrap justify-between  items-center">
 			<div class="flex w-0 flex-1  items-center">
@@ -94,4 +94,5 @@
 		</div>
 	</div>
 </div>
-<slot></slot>
+
+<slot/>

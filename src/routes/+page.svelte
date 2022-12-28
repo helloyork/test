@@ -1,10 +1,9 @@
 <script lang="ts">
 	import Underline from '../lib/underline.svelte';
-	import Notice from '../lib/notice.svelte';
 	let size = true;
 </script>
 
-<Notice></Notice>
+
 
 <div class="isolate bg-white">
 	<main>
