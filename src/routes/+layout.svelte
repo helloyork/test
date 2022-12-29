@@ -11,10 +11,22 @@
 	import { writable } from 'svelte/store';
 
 	let user = writable(null);
-	onMount(()=>{
+	let refresh;
+	onMount(() => {
 		netlifyIdentity.init();
 		user = createUser();
-	})
+		netlifyIdentity.on('error', (err) => {
+			throw new Error(err);
+		});
+		netlifyIdentity.on('logout', () => {
+			localStorage.clear();
+			user.logout();
+			loginstate=false;
+		});
+		refresh = () => {
+			return location.reload();
+		};
+	});
 	$: loginstate = !!$user;
 	$: username = $user !== null ? $user.username : ' there!';
 
@@ -54,8 +66,9 @@
 			clickHandler: (info) => {
 				if (info.text == '登录') {
 					handleUserAction('login');
-				} if (info.text == '登出') {
-					handleUserAction('logout');
+				}
+				if (info.text == '登出') {
+					handleUserAction('login');
 				}
 			}
 		}
@@ -74,12 +87,13 @@
 					navigate($redirectURL);
 					redirectURL.clearRedirectURL();
 				}
+				refresh();
 			});
 		} else if (action === 'logout') {
-			navigate('/');
 			user.logout();
 			netlifyIdentity.logout();
-		}
+			return;
+		} else throw new Error('unknow command');
 	}
 </script>
 
