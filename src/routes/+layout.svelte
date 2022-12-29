@@ -5,7 +5,7 @@
 	import '../app.css';
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
-	import Notice from '../lib/notice.svelte';
+	import Notice from '../lib/svelte/notice.svelte';
 	import netlifyIdentity from 'netlify-identity-widget';
 	import { createUser, redirectURL } from '$lib/store.js';
 	import { writable } from 'svelte/store';
@@ -39,13 +39,13 @@
 	const footLinks = [
 		{
 			name: '与我们相关',
-			links: [{ label: 'QQ群: 2418207411', target: 'https://jq.qq.com/?_wv=1027&k=6x5B4MUl' }]
+			links: [{ label: 'QQ群: 686367601', target: 'https://jq.qq.com/?_wv=1027&k=6x5B4MUl' }]
 		},
 		{
 			name: '本页导航',
 			links: [
 				{ label: '主页', target: '/' },
-				{ label: '关于我们', target: '/about' },
+				{ label: '关于我们', target: '/about#aboutus' },
 				{ label: '登录', target: '/login' }
 			]
 		},
