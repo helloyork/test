@@ -6,8 +6,17 @@
 	import NavLink from '../lib/Nav/NavLink.svelte';
 	import UserNav from '../lib/UserNav/UserNav.svelte';
 	import Notice from '../lib/notice.svelte';
-	import { locallogin } from '$lib/user.js';
-	import Underline from '../lib/underline.svelte';
+	import netlifyIdentity from 'netlify-identity-widget';
+	import { createUser, redirectURL } from '$lib/store.js';
+
+	let user;
+	onMount(()=>{
+		user = createUser();
+	})
+	// netlifyIdentity.init();
+	$: loginstate = !!$user;
+	// $: username = $user !== null ? $user.username : ' there!';
+
 	const links = [
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
@@ -24,7 +33,7 @@
 			links: [
 				{ label: '主页', target: '/' },
 				{ label: '关于我们', target: '/about' },
-				{ label: '登录', target: '/login' },
+				{ label: '登录', target: '/login' }
 			]
 		},
 		{
@@ -34,37 +43,43 @@
 	];
 	let userOpen = false;
 	let mobileMenuOpen = false;
-	$: loginstate = false;
 	$: UserNavs = [
 		loginstate ? { href: '/user/me', text: '我', id: 'me' } : {},
 		loginstate ? { href: '/user/settings', text: '设置', id: 'settings' } : {},
 		{
-			href: loginstate ? '/' : '/login',
+			href: loginstate ? '/' : '/',
 			text: loginstate ? '登出' : '登录',
 			id: 'login/logout',
 			clickHandler: (info) => {
-				if (info.text == '登出') {
-					localStorage.setItem('user', JSON.stringify({}));
-					location.href = '/';
+				if (info.text == '登录') {
+					handleUserAction('login');
+				} if (info.text == '登出') {
+					handleUserAction('logout');
 				}
 			}
 		}
 	];
-	onMount(() => {
-		locallogin(localStorage).then((r) => {
-			if (r) {
-				localStorage.setItem('user', JSON.stringify(r.result));
-				console.log('login sc');
-				loginstate = true;
-			} else {
-				console.log('login fs');
-			}
-		});
-	});
 	const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
 		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
 		userOpen = false;
 	};
+	function handleUserAction(action) {
+		if (action === 'login' || action === 'signup') {
+			netlifyIdentity.open(action);
+			netlifyIdentity.on('login', (u) => {
+				user.login(u);
+				netlifyIdentity.close();
+				if ($redirectURL !== '') {
+					navigate($redirectURL);
+					redirectURL.clearRedirectURL();
+				}
+			});
+		} else if (action === 'logout') {
+			navigate('/');
+			user.logout();
+			netlifyIdentity.logout();
+		}
+	}
 </script>
 
 <nav class="bg-gray-800">
@@ -227,10 +242,7 @@
 
 <slot />
 
-<div
-	class="flex bg-gray-800 text-white mt-20"
-	style="width:100%; vertical-align: middle;"
->
+<div class="flex bg-gray-800 text-white mt-20" style="width:100%; vertical-align: middle;">
 	<div class="flex items-center" style="margin:70px;">
 		<img class="flex h-8 w-auto sm:item-center" src="/light.png" alt="" />
 		<a
@@ -242,16 +254,25 @@
 		>
 	</div>
 	{#each footLinks as links}
-		<ul class="hidden sm:inline-block" style="text-align: center; margin:20px; margin-left:30px; margin-top:30px;">
+		<ul
+			class="hidden sm:inline-block"
+			style="text-align: center; margin:20px; margin-left:30px; margin-top:30px;"
+		>
 			<h6 class="text-gray-400 truncate" style="margin-bottom: 10px;">{links.name}</h6>
 			{#each links.links as link}
-				<li><a href={link.target} class="truncate text-gray-300 hover:text-gray-50 no-underline">{link.label}</a></li>
+				<li>
+					<a href={link.target} class="truncate text-gray-300 hover:text-gray-50 no-underline"
+						>{link.label}</a
+					>
+				</li>
 			{/each}
 		</ul>
 	{/each}
 
 	<div class="ml-7 hidden sm:inline-block">
-		<h6 class="text-gray-500 truncate" style="margin: 20px;margin-bottom:10px; margin-top:30px;">网站很棒？与朋友分享我们</h6>
+		<h6 class="text-gray-500 truncate" style="margin: 20px;margin-bottom:10px; margin-top:30px;">
+			网站很棒？与朋友分享我们
+		</h6>
 		<ul class="inline-block ml-4 truncate no-underline" style="">
 			<li style="float: right; margin:5px;">
 				<a href="https://www.douyin.com/">

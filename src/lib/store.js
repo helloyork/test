@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store'
 
-function createUser() {
+function createUserL() {
   const localUser = JSON.parse(localStorage.getItem('gotrue.user'))
 
   let u = null
@@ -48,5 +48,5 @@ function createRedirectURL() {
   }
 }
 
-export const user = createUser()
+export let createUser = createUserL;
 export const redirectURL = createRedirectURL()
