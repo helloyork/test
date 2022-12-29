@@ -8,14 +8,15 @@
 	import Notice from '../lib/notice.svelte';
 	import netlifyIdentity from 'netlify-identity-widget';
 	import { createUser, redirectURL } from '$lib/store.js';
+	import { writable } from 'svelte/store';
 
-	let user;
+	let user = writable(null);
 	onMount(()=>{
+		netlifyIdentity.init();
 		user = createUser();
 	})
-	// netlifyIdentity.init();
 	$: loginstate = !!$user;
-	// $: username = $user !== null ? $user.username : ' there!';
+	$: username = $user !== null ? $user.username : ' there!';
 
 	const links = [
 		{ label: '主页', target: '/' },
