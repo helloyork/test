@@ -228,7 +228,7 @@
 <slot />
 
 <div
-	class="flex bg-gray-800 text-white"
+	class="flex bg-gray-800 text-white mt-20"
 	style="width:100%; vertical-align: middle;"
 >
 	<div class="flex items-center" style="margin:70px;">

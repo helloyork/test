@@ -9,7 +9,7 @@
 	<main>
 		<div
 			class="block relative px-6 lg:px-8"
-			style="background-image: url(/T.png);background-repeat: no-repeat;background-size: 100% 100%; background-size: cover;"
+			style="background-image: url(/T.png);background-repeat: no-repeat;background-size: 100% 100%;"
 		>
 			<div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
 				<div>
@@ -69,7 +69,7 @@
 			<div class="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
 						<!-- Heroicon name: outline/globe-alt -->
 						<svg
@@ -147,7 +147,7 @@
 
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
 						<!-- Heroicon name: outline/scale -->
 						<svg
@@ -185,7 +185,7 @@
 
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
 						<!-- Heroicon name: outline/bolt -->
 						<svg
@@ -232,7 +232,7 @@
 
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div
-						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden"
+						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
 						<!-- Heroicon name: outline/device-phone-mobile -->
 						<svg
@@ -262,3 +262,20 @@
 		</div>
 	</div>
 </div>
+
+<div class="">
+	<div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
+	  <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+		<span class="block">获取更多消息？</span>
+		<span class="block text-indigo-600">加入或来访我们！</span>
+	  </h2>
+	  <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+		<div class="inline-flex rounded-md shadow-sm">
+		  <a href="/about" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-500 px-5 py-3 text-base font-bold text-white hover:bg-indigo-600">加入我们</a>
+		</div>
+		<div class="ml-3 inline-flex rounded-md shadow-sm hover:bg-indigo-100">
+		  <a href="/about" class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-500">获取更多</a>
+		</div>
+	  </div>
+	</div>
+  </div>

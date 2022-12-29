@@ -49,18 +49,12 @@
 	});
 </script>
 
-<!-- Add a menu:
-   Log in / Sign up - when the user is not logged in
-   Username / Log out - when the user is logged in
-  -->
+
 <div data-netlify-identity-menu />
 
-<!-- Add a simpler button:
-  Simple button that will open the modal.
--->
 <div data-netlify-identity-button>Login with Netlify Identity</div>
 
-<!-- <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 	<div class="w-full max-w-md space-y-8">
 		<div>
 			<h2 class="mt-6 text-center text-5xl font-bold tracking-tight text-gray-900 my-4">登录</h2>
@@ -69,47 +63,6 @@
 				<a href="/login/register" class="font-medium text-indigo-600 hover:text-indigo-500">注册</a>
 			</p>
 		</div>
-		<input type="hidden" name="remember" value="true" />
-		<div class="-space-y-px rounded-md shadow-sm">
-			<div>
-				<input
-					id="username"
-					name="username"
-					autocomplete="email"
-					required
-					class="relative block w-full appearance-none rounded-none rounded-t-md border {tips1
-						? 'border-red-500'
-						: 'border-gray-300'} px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-					placeholder="用户名"
-					bind:value={username}
-				/>
-			</div>
-			<div>
-				<input
-					id="password"
-					name="password"
-					type="password"
-					autocomplete="current-password"
-					required
-					class="relative block w-full appearance-none rounded-none rounded-b-md border {tips2
-						? 'border-red-500'
-						: 'border-gray-300'} px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-					placeholder="密码"
-					bind:value={password}
-				/>
-			</div>
-		</div>
-		<Tip text={errtext} display={errshow} />
-		<Tip text="请输入用户名" display={tips1} />
-		<Tip text="请输入密码" display={tips2} />
-		<div class="flex items-center justify-between">
-			<div class="flex items-center">
-			</div>
-			<div class="text-sm">
-				<a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">忘记密码？</a>
-			</div>
-		</div>
-
 		<div>
 			<button
 				type="submit"
@@ -124,4 +77,4 @@
 		</div>
 	</div>
 </div> 
--->
+
