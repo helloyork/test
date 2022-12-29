@@ -14,18 +14,6 @@
 			<div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
 				<div>
 					<div class="hidden sm:mb-8 sm:flex sm:justify-center">
-						<!-- <div
-							class="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-						>
-							<span class="text-gray-600">
-								Announcing our next round of funding. <a
-									href="#"
-									class="font-semibold text-indigo-600"
-									><span class="absolute inset-0" aria-hidden="true" />Read more
-									<span aria-hidden="true">&rarr;</span></a
-								>
-							</span>
-						</div>  -->
 					</div>
 					<div>
 						<h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-5xl">
@@ -60,7 +48,6 @@
 <div class="bg-white py-24 sm:py-32 lg:py-40">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="sm:text-center">
-			<!-- <h2 class="text-lg font-semibold leading-8 text-indigo-600">文字</h2> -->
 			<p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">关于我们</p>
 			<p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">ABOUT US</p>
 		</div>
@@ -71,7 +58,6 @@
 					<div
 						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
-						<!-- Heroicon name: outline/globe-alt -->
 						<svg
 							width="27"
 							height="27"
@@ -149,7 +135,6 @@
 					<div
 						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
-						<!-- Heroicon name: outline/scale -->
 						<svg
 							width="27"
 							height="27"
@@ -187,7 +172,6 @@
 					<div
 						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
-						<!-- Heroicon name: outline/bolt -->
 						<svg
 							width="27"
 							height="27"
@@ -234,7 +218,6 @@
 					<div
 						class="h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0 sm:flex hidden shadow-sm"
 					>
-						<!-- Heroicon name: outline/device-phone-mobile -->
 						<svg
 							class="h-8 w-8"
 							xmlns="http://www.w3.org/2000/svg"

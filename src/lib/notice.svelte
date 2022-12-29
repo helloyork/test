@@ -8,7 +8,6 @@
 		<div class="flex flex-wrap justify-between  items-center">
 			<div class="flex w-0 flex-1  items-center">
 				<span class="flex rounded-lg bg-indigo-800 p-2">
-					<!-- Heroicon name: outline/megaphone -->
 					<svg
 						width="27"
 						height="27"
