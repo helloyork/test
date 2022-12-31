@@ -34,7 +34,6 @@
 		{ label: '主页', target: '/' },
 		{ label: '关于我们', target: '/about' },
 		{ label: '项目与资源', target: '/storage' },
-		{ label: '测试', target: '/test' }
 	];
 	const footLinks = [
 		{
