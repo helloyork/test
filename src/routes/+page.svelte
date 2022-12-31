@@ -56,14 +56,14 @@
 			<div class="inline-flex rounded-md shadow-sm">
 				<a
 					href="/about#contactus"
-					class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-500 px-5 py-3 text-base font-bold text-white hover:bg-indigo-600 no-underline"
+					class="inline-flex truncate items-center justify-center rounded-md border border-transparent bg-indigo-500 px-5 py-3 text-base font-bold text-white hover:bg-indigo-600 no-underline"
 					>加入我们</a
 				>
 			</div>
 			<div class="ml-3 inline-flex rounded-md shadow-sm hover:bg-indigo-100">
 				<a
 					href="/about"
-					class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-500 no-underline"
+					class="inline-flex truncate items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-500 no-underline"
 					>获取更多</a
 				>
 			</div>
