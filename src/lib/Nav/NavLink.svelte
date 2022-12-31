@@ -14,5 +14,5 @@
 		: type == 'desktop'
 		? 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium no-underline'
 		: 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium no-underline'}
-	aria-current="page">{label}</a
+	aria-current="page" on:click={()=>{location.href=target}}>{label}</a
 >
