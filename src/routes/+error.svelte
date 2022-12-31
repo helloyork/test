@@ -1,5 +1,9 @@
 <div class="main">
-	<h6 class="main text-gray-400">页面不见了</h6>
+	<h6 class="main text-gray-400">
+		页面不见了
+		如果你认为这是一个错误，请联系网站所有者
+		QQ:2418207411
+	</h6>
 	<!-- <img src="/404.png" alt="404 not Found" style="height: 50%;" /> -->
 </div>
 
@@ -16,5 +20,6 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		margin-bottom: 80%;
 	}
 </style>
