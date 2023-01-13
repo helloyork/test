@@ -13,10 +13,10 @@
 				<div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
 					<div class="sm:min-w-0 sm:flex-1">
 						<p class="text-lg font-semibold leading-8 text-gray-900">
-							<Underline>加入我们|与我们合作</Underline>
+							<Underline>加入我们 | 与我们合作</Underline>
 						</p>
 						<p class="mt-2 text-base leading-7 text-gray-600">
-							<a class="no-underline textgray-200" href="https://jq.qq.com/?_wv=1027&k=6x5B4MUl">QQ群|686367601</a>
+							<a class="no-underline textgray-200 hover:textgray-200" href="https://jq.qq.com/?_wv=1027&k=6x5B4MUl">QQ群|686367601</a>
 						</p>
 					</div>
 				</div>
