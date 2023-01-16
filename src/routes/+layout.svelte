@@ -86,7 +86,6 @@
 					navigate($redirectURL);
 					redirectURL.clearRedirectURL();
 				}
-				refresh();
 			});
 		} else if (action === 'logout') {
 			user.logout();
