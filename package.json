@@ -40,6 +40,7 @@
 	"dependencies": {
 		"@headlessui/vue": "^1.7.4",
 		"@heroicons/vue": "^2.0.13",
+		"@netlify/plugin-emails": "^1.0.0",
 		"@sveltejs/adapter-netlify": "^1.0.0",
 		"dotenv": "^16.0.3",
 		"netlify-identity-widget": "^1.9.2",
